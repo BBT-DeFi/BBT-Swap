@@ -20,6 +20,11 @@ import { useCakeVault, usePriceCakeBusd } from 'state/hooks'
 import Balance from 'components/Balance'
 import BountyModal from './BountyModal'
 
+const ButtonClaim = styled(Button)`
+background-color:#02D767;
+color: ${({ theme }) => theme.colors.text};
+`
+
 const StyledCard = styled(Card)`
   width: 100%;
   flex: 1;
@@ -103,14 +108,14 @@ const BountyCard = () => {
                 <Skeleton height={16} width={62} />
               )}
             </Flex>
-            <Button
+            <ButtonClaim
               disabled={!dollarBountyToDisplay || !cakeBountyToDisplay || !callFee}
               onClick={onPresentBountyModal}
               scale="sm"
               id="clickClaimVaultBounty"
             >
               {t('Claim')}
-            </Button>
+            </ButtonClaim>
           </Flex>
         </CardBody>
       </StyledCard>

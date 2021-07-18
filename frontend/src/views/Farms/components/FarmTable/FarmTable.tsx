@@ -12,6 +12,10 @@ export interface ITableProps {
   sortColumn?: string
 }
 
+const ButtonScroll = styled(Button)`
+  color:#02D767;
+`
+
 const Container = styled.div`
   filter: ${({ theme }) => theme.card.dropShadow};
   width: 100%;
@@ -83,10 +87,10 @@ const FarmTable: React.FC<ITableProps> = (props) => {
           </StyledTable>
         </TableWrapper>
         <ScrollButtonContainer>
-          <Button variant="text" onClick={scrollToTop}>
+          <ButtonScroll variant="text" onClick={scrollToTop}>
             {t('To Top')}
-            <ChevronUpIcon color="primary" />
-          </Button>
+            <ChevronUpIcon color="#02D767" />
+          </ButtonScroll>
         </ScrollButtonContainer>
       </TableContainer>
     </Container>

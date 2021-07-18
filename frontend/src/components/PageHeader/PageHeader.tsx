@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Box } from '@pancakeswap/uikit'
 import Container from '../Layout/Container'
-
+// layout header
 const Outer = styled(Box)<{ background?: string }>`
-  background: ${({ theme, background }) => background || theme.colors.gradients.bubblegum};
+background: linear-gradient(180deg, rgba(2, 215, 103, 0.24) 0%, rgba(2, 215, 103, 0) 100%);
 `
 
 const Inner = styled(Container)`

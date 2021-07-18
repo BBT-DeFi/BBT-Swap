@@ -82,7 +82,6 @@ const TagsContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 25px;
-
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-top: 16px;
   }
@@ -157,13 +156,13 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
       <InfoContainer>
         {isActive && (
           <StakeContainer>
-            <StyledLinkExternal href={`/add/${liquidityUrlPathParts}`}>
+            <StyledLinkExternal href={`/add/${liquidityUrlPathParts}`} color='#02D767'>
               {t('Get %symbol%', { symbol: lpLabel })}
             </StyledLinkExternal>
           </StakeContainer>
         )}
-        <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-        <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+        <StyledLinkExternal href={bsc} color='#02D767'>{t('View Contract')}</StyledLinkExternal>
+        <StyledLinkExternal href={info} color='#02D767'>{t('See Pair Info')}</StyledLinkExternal>
         <TagsContainer>
           {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
           {dual ? <DualTag /> : null}

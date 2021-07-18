@@ -4,6 +4,21 @@ import { useLocation, Link, useRouteMatch } from 'react-router-dom'
 import { ButtonMenu, ButtonMenuItem, NotificationDot } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
+const ButtonSelectMenu = styled(ButtonMenu)`
+  background-color:transparent;
+  color:red;
+  .ksnaJT{
+    background-color:#02D767;
+  }
+  .fKmQTe{
+    background-color:#02D767;
+  }
+`
+
+  // const ButtonItem = styled(ButtonMenuItem) <{ background?: string }>`
+  // color:#02D767;
+  // `
+
 interface FarmTabButtonsProps {
   hasStakeInFinishedFarms: boolean
 }
@@ -31,7 +46,7 @@ const FarmTabButtons: React.FC<FarmTabButtonsProps> = ({ hasStakeInFinishedFarms
 
   return (
     <Wrapper>
-      <ButtonMenu activeIndex={activeIndex} scale="sm" variant="subtle">
+      <ButtonSelectMenu activeIndex={activeIndex} scale="sm" variant="primary" >
         <ButtonMenuItem as={Link} to={`${url}`}>
           {t('Live')}
         </ButtonMenuItem>
@@ -40,7 +55,7 @@ const FarmTabButtons: React.FC<FarmTabButtonsProps> = ({ hasStakeInFinishedFarms
             {t('Finished')}
           </ButtonMenuItem>
         </NotificationDot>
-      </ButtonMenu>
+      </ButtonSelectMenu>
     </Wrapper>
   )
 }

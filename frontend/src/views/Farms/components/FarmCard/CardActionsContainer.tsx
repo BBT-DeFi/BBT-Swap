@@ -16,6 +16,11 @@ import useApproveFarm from '../../hooks/useApproveFarm'
 const Action = styled.div`
   padding-top: 16px;
 `
+
+const ButtonApprove = styled(Button)`
+background:#02D767;
+`
+
 export interface FarmWithStakedValue extends Farm {
   apr?: number
 }
@@ -69,28 +74,28 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
         addLiquidityUrl={addLiquidityUrl}
       />
     ) : (
-      <Button mt="8px" width="100%" disabled={requestedApproval} onClick={handleApprove}>
+      <ButtonApprove mt="8px" width="100%" disabled={requestedApproval} onClick={handleApprove}>
         {t('Approve Contract')}
-      </Button>
+      </ButtonApprove>
     )
   }
 
   return (
     <Action>
       <Flex>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+        <Text bold textTransform="uppercase" color="#02D767" fontSize="12px" pr="4px">
           CAKE
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold textTransform="uppercase" color="#02D767" fontSize="12px">
           {t('Earned')}
         </Text>
       </Flex>
       <HarvestAction earnings={earnings} pid={pid} />
       <Flex>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+        <Text bold textTransform="uppercase" color="#02D767" fontSize="12px" pr="4px">
           {farm.lpSymbol}
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold textTransform="uppercase" color="#02D767" fontSize="12px">
           {t('Staked')}
         </Text>
       </Flex>

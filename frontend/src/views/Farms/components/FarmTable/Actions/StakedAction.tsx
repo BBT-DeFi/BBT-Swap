@@ -23,6 +23,10 @@ import useStakeFarms from '../../../hooks/useStakeFarms'
 import useApproveFarm from '../../../hooks/useApproveFarm'
 import { ActionContainer, ActionTitles, ActionContent, Earned } from './styles'
 
+const ButtonEnable = styled(Button)`
+background:#02D767;
+`
+
 const IconButtonWrapper = styled.div`
   display: flex;
 `
@@ -202,9 +206,9 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
         </Text>
       </ActionTitles>
       <ActionContent>
-        <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
+        <ButtonEnable width="100%" disabled={requestedApproval} onClick={handleApprove}>
           {t('Enable')}
-        </Button>
+        </ButtonEnable>
       </ActionContent>
     </ActionContainer>
   )

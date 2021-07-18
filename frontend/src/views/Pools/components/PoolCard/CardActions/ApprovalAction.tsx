@@ -1,10 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Button, AutoRenewIcon, Skeleton } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useERC20 } from 'hooks/useContract'
 import { getAddress } from 'utils/addressHelpers'
 import { Pool } from 'state/types'
 import { useApprovePool } from '../../../hooks/useApprove'
+
+// apr manual cake
+const ButtonEnable = styled(Button)`
+background:#02D767;
+`
 
 interface ApprovalActionProps {
   pool: Pool
@@ -22,7 +28,7 @@ const ApprovalAction: React.FC<ApprovalActionProps> = ({ pool, isLoading = false
       {isLoading ? (
         <Skeleton width="100%" height="52px" />
       ) : (
-        <Button
+        <ButtonEnable
           isLoading={requestedApproval}
           endIcon={requestedApproval ? <AutoRenewIcon spin color="currentColor" /> : null}
           disabled={requestedApproval}
@@ -30,7 +36,7 @@ const ApprovalAction: React.FC<ApprovalActionProps> = ({ pool, isLoading = false
           width="100%"
         >
           {t('Enable')}
-        </Button>
+        </ButtonEnable>
       )}
     </>
   )

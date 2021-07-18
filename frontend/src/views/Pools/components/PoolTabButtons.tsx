@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouteMatch, Link } from 'react-router-dom'
+import styled from 'styled-components'
 import {
   ButtonMenu,
   ButtonMenuItem,
@@ -12,6 +13,34 @@ import {
 import { useTranslation } from 'contexts/Localization'
 import ToggleView, { ViewMode } from './ToggleView/ToggleView'
 
+const ButtonSelectMenu = styled(ButtonMenu)`
+  background-color:transparent;
+  .ksnaJT{
+    background-color:#02D767;
+  }
+  .fKmQTe{
+    background-color:#02D767;
+  }
+`
+
+const FlexToggle = styled(Flex)`
+//Hover Toggle
+.cRtcwJ{
+  background-color:#02D767;
+}
+.ffFWKU{
+  background-color:#02D767;
+}
+.kzdlOT:hover + .sc-hmbstg:not(:disabled):not(:checked) {
+  box-shadow: 0px 0px 0px 3px #02D767;
+}
+.kzdlOT:focus + .sc-hmbstg {
+box-shadow: 0px 0px 0px 3px #02D767;
+}
+ 
+`
+
+
 const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, viewMode, setViewMode }) => {
   const { url, isExact } = useRouteMatch()
   const { isXs, isSm } = useMatchBreakpoints()
@@ -20,7 +49,7 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
   const viewModeToggle = <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
 
   const liveOrFinishedSwitch = (
-    <ButtonMenu activeIndex={isExact ? 0 : 1} scale="sm" variant="subtle">
+    <ButtonSelectMenu activeIndex={isExact ? 0 : 1} scale="sm">
       <ButtonMenuItem as={Link} to={`${url}`}>
         {t('Live')}
       </ButtonMenuItem>
@@ -29,14 +58,14 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
           {t('Finished')}
         </ButtonMenuItem>
       </NotificationDot>
-    </ButtonMenu>
+    </ButtonSelectMenu>
   )
 
   const stakedOnlySwitch = (
-    <Flex mt={['4px', null, 0, null]} ml={[0, null, '24px', null]} justifyContent="center" alignItems="center">
+    <FlexToggle mt={['4px', null, 0, null]} ml={[0, null, '24px', null]} justifyContent="center" alignItems="center">
       <Toggle scale="sm" checked={stakedOnly} onChange={() => setStakedOnly((prev) => !prev)} />
       <Text ml={['4px', '4px', '8px']}>{t('Staked only')}</Text>
-    </Flex>
+    </FlexToggle>
   )
 
   if (isXs || isSm) {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
-import { Flex, CardFooter, ExpandableLabel, HelpIcon, useTooltip } from '@pancakeswap/uikit'
+import { Text, Flex, CardFooter, ExpandableLabel, HelpIcon, useTooltip } from '@pancakeswap/uikit'
 import { Pool } from 'state/types'
 import { CompoundingPoolTag, ManualPoolTag } from 'components/Tags'
 import ExpandedFooter from './ExpandedFooter'
@@ -46,7 +46,9 @@ const Footer: React.FC<FooterProps> = ({ pool, account }) => {
           </Flex>
         </Flex>
         <ExpandableLabel expanded={isExpanded} onClick={() => setIsExpanded(!isExpanded)}>
+          <Text color='#02D767'>
           {isExpanded ? t('Hide') : t('Details')}
+          </Text>
         </ExpandableLabel>
       </ExpandableButtonWrapper>
       {isExpanded && <ExpandedFooter pool={pool} account={account} />}

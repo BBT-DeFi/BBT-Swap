@@ -232,12 +232,12 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
         {(isXs || isSm || isMd) && totalStakedRow}
         {shouldShowBlockCountdown && blocksRow}
         <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
-          <LinkExternal href={`https://pancakeswap.info/token/${getAddress(earningToken.address)}`} bold={false}>
+          <LinkExternal href={`https://pancakeswap.info/token/${getAddress(earningToken.address)}`} bold={false} color='#02D767'>
             {t('See Token Info')}
           </LinkExternal>
         </Flex>
         <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
-          <LinkExternal href={earningToken.projectLink} bold={false}>
+          <LinkExternal href={earningToken.projectLink} bold={false} color='#02D767'>
             {t('View Project Site')}
           </LinkExternal>
         </Flex>
@@ -246,7 +246,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
             <LinkExternal
               href={`${BASE_BSC_SCAN_URL}/address/${isAutoVault ? cakeVaultContractAddress : poolContractAddress}`}
               bold={false}
-            >
+              color='#02D767' >
               {t('View Contract')}
             </LinkExternal>
           </Flex>

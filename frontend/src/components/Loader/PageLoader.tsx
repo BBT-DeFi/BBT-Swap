@@ -8,11 +8,15 @@ const Wrapper = styled(Page)`
   justify-content: center;
   align-items: center;
 `
-
+const LoaderSpinner = styled(Spinner)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 const PageLoader: React.FC = () => {
   return (
     <Wrapper>
-      <Spinner />
+            <img src="/images/kubcoin.png" alt="kub loader" /> {/* change spinner */}
     </Wrapper>
   )
 }

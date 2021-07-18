@@ -50,10 +50,10 @@ const StyledCardHeader: React.FC<{
     <Wrapper isFinished={isFinished} background={background}>
       <Flex alignItems="center" justifyContent="space-between">
         <Flex flexDirection="column">
-          <Heading color={isFinished ? 'textDisabled' : 'body'} scale="lg">
+          <Heading color={isFinished ? 'textDisabled' : '#02D767'} scale="lg">
             {`${getHeadingPrefix()} ${earningToken.symbol}`}
           </Heading>
-          <Text color={isFinished ? 'textDisabled' : 'textSubtle'}>{getSubHeading()}</Text>
+          <Text color={isFinished ? 'textDisabled' : '#979797'}>{getSubHeading()}</Text>
         </Flex>
         {isAutoVault ? (
           <CakeVaultTokenPairImage width={64} height={64} />

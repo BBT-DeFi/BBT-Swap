@@ -6,7 +6,7 @@ import { useTranslation } from 'contexts/Localization'
 
 
 const ButtonUnlock = styled(Button)`
-background:#02D767;
+background: #02D767;
 `
 
 

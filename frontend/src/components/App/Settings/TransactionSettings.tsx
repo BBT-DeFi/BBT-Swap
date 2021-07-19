@@ -80,7 +80,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
     <AutoColumn gap="md">
       <AutoColumn gap="sm">
         <RowFixed>
-          <Text fontSize="14px">{t('Slippage Tolerance')}</Text>
+          <Text fontSize="14px" color="black">
+            {t('Slippage Tolerance')}
+          </Text>
           <QuestionHelper
             text={t('Your transaction will revert if the price changes unfavorably by more than this percentage.')}
             ml="4px"
@@ -93,7 +95,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 setSlippageInput('')
                 setRawSlippage(10)
               }}
-              variant={rawSlippage === 10 ? 'primary' : 'tertiary'}
+              variant={rawSlippage === 10 ? 'success' : 'tertiary'}
             >
               0.1%
             </Button>
@@ -102,7 +104,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 setSlippageInput('')
                 setRawSlippage(50)
               }}
-              variant={rawSlippage === 50 ? 'primary' : 'tertiary'}
+              variant={rawSlippage === 50 ? 'success' : 'tertiary'}
             >
               0.5%
             </Button>
@@ -111,7 +113,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 setSlippageInput('')
                 setRawSlippage(100)
               }}
-              variant={rawSlippage === 100 ? 'primary' : 'tertiary'}
+              variant={rawSlippage === 100 ? 'success' : 'tertiary'}
             >
               1%
             </Button>
@@ -152,7 +154,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
 
       <AutoColumn gap="sm">
         <RowFixed>
-          <Text fontSize="14px">Transaction deadline</Text>
+          <Text fontSize="14px" color="black">Transaction deadline</Text>
           <QuestionHelper text={t('Your transaction will revert if it is pending for more than this long.')} ml="4px" />
         </RowFixed>
         <RowFixed>

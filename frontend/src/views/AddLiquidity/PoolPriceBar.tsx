@@ -23,8 +23,8 @@ function PoolPriceBar({
     <AutoColumn gap="md">
       <AutoRow justify="space-around" gap="4px">
         <AutoColumn justify="center">
-          <Text>{price?.toSignificant(6) ?? '-'}</Text>
-          <Text fontSize="14px" pt={1}>
+          <Text color="#02d767">{price?.toSignificant(6) ?? '-'}</Text>
+          <Text fontSize="14px" color="#02d767" pt={1}>
             {t('%assetA% per %assetB%', {
               assetA: currencies[Field.CURRENCY_B]?.symbol ?? '',
               assetB: currencies[Field.CURRENCY_A]?.symbol ?? '',
@@ -32,8 +32,8 @@ function PoolPriceBar({
           </Text>
         </AutoColumn>
         <AutoColumn justify="center">
-          <Text>{price?.invert()?.toSignificant(6) ?? '-'}</Text>
-          <Text fontSize="14px" pt={1}>
+          <Text color="#02d767">{price?.invert()?.toSignificant(6) ?? '-'}</Text>
+          <Text fontSize="14px" color="#02d767" pt={1}>
             {t('%assetA% per %assetB%', {
               assetA: currencies[Field.CURRENCY_A]?.symbol ?? '',
               assetB: currencies[Field.CURRENCY_B]?.symbol ?? '',
@@ -41,13 +41,13 @@ function PoolPriceBar({
           </Text>
         </AutoColumn>
         <AutoColumn justify="center">
-          <Text>
+          <Text color="#02d767">
             {noLiquidity && price
               ? '100'
               : (poolTokenPercentage?.lessThan(ONE_BIPS) ? '<0.01' : poolTokenPercentage?.toFixed(2)) ?? '0'}
             %
           </Text>
-          <Text fontSize="14px" pt={1}>
+          <Text fontSize="14px" color="#02d767" pt={1}>
             {t('Share of Pool')}
           </Text>
         </AutoColumn>

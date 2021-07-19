@@ -32,12 +32,12 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           </IconButton>
         )}
         <Flex flexDirection="column">
-          <Heading as="h2" mb="8px">
+          <Heading as="h2" mb="8px" color="#02D767">
             {title}
           </Heading>
           <Flex alignItems="center">
             {helper && <QuestionHelper text={helper} mr="4px" />}
-            <Text color="textSubtle" fontSize="14px">
+            <Text color="#02D767" fontSize="14px">
               {subtitle}
             </Text>
           </Flex>

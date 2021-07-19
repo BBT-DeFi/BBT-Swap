@@ -359,7 +359,7 @@ export default function AddLiquidity({
               <>
                 <LightCard padding="0px" borderRadius="20px">
                   <RowBetween padding="1rem">
-                    <Text fontSize="14px">
+                    <Text fontSize="14px" color="#02d767">
                       {noLiquidity ? t('Initial prices and pool share') : t('Prices and pool share')}
                     </Text>
                   </RowBetween>{' '}
@@ -441,8 +441,8 @@ export default function AddLiquidity({
       </AppBody>
       {!addIsUnsupported ? (
         pair && !noLiquidity && pairState !== PairState.INVALID ? (
-          <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
-            <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
+          <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem'}}>
+            <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair}/>
           </AutoColumn>
         ) : null
       ) : (

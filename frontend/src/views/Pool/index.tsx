@@ -76,7 +76,7 @@ export default function Pool() {
       ))
     }
     return (
-      <Text color="textSubtle" textAlign="center">
+      <Text color="black" textAlign="center">
         {t('No liquidity found.')}
       </Text>
     )
@@ -90,17 +90,31 @@ export default function Pool() {
           {renderBody()}
           {account && !v2IsLoading && (
             <Flex flexDirection="column" alignItems="center" mt="24px">
-              <Text color="textSubtle" mb="8px">
+              <Text color="black" mb="8px">
                 {t("Don't see a pool you joined?")}
               </Text>
-              <Button id="import-pool-link" variant="secondary" scale="sm" as={Link} to="/find">
+              <Button
+                id="import-pool-link"
+                variant="secondary"
+                scale="sm"
+                as={Link}
+                to="/find"
+                style={{ border: '2px solid #02D767', color: '#02D767' }}
+              >
                 {t('Find other LP tokens')}
               </Button>
             </Flex>
           )}
         </Body>
         <CardFooter style={{ textAlign: 'center' }}>
-          <Button id="join-pool-button" as={Link} to="/add" width="100%" startIcon={<AddIcon color="white" />}>
+          <Button
+            id="join-pool-button"
+            as={Link}
+            to="/add"
+            width="100%"
+            startIcon={<AddIcon color="white" />}
+            style={{ backgroundColor: '#02D767' }}
+          >
             {t('Add Liquidity')}
           </Button>
         </CardFooter>

@@ -84,8 +84,8 @@ const FarmedStakingCard = () => {
               {pendingTx
                 ? t('Collecting CAKE')
                 : t('Harvest all (%count%)', {
-                    count: balancesWithValue.length,
-                  })}
+                  count: balancesWithValue.length,
+                })}
             </Button>
           ) : (
             <UnlockButton width="100%" />

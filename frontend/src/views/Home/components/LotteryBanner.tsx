@@ -15,9 +15,14 @@ const NowLive = styled(Text)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
+const ButtonLottery = styled(Button)`
+  background: #02D767;
+
+`
 
 const Wrapper = styled.div`
-  background-image: linear-gradient(#7645d9, #452a7a);
+   background-image: linear-gradient(180deg, rgba(2, 215, 103, 0.24) 0%, rgba(2, 215, 103, 0) 100%);
+
   max-height: max-content;
   overflow: hidden;
   ${({ theme }) => theme.mediaQueries.md} {
@@ -105,7 +110,7 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
         <LeftWrapper>
           <NowLive>{t('Lottery Now Live')}</NowLive>
           <PrizeFlex>
-            <Over fontSize="40px" color="#ffffff" bold mr="8px">
+            <Over fontSize="40px" color="#02D767" bold mr="8px">
               {over}
             </Over>
             <>
@@ -114,7 +119,7 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
                   <Skeleton height={40} width={120} mb="10px" mt="10px" mr="8px" />
                 </>
               ) : (
-                <Balance fontSize="40px" color="#ffffff" bold prefix="$" mr="8px" decimals={0} value={prizeTotal} />
+                <Balance fontSize="40px" color="#02D767" bold prefix="$" mr="8px" decimals={0} value={prizeTotal} />
               )}
             </>
             <Text fontSize="40px" color="#ffffff" bold>
@@ -122,16 +127,16 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
             </Text>
           </PrizeFlex>
           <NavLink exact activeClassName="active" to="/lottery" id="lottery-pot-banner">
-            <Button>
+            <ButtonLottery>
               <Text color="white" bold fontSize="16px" mr="4px">
                 {t('Play Now')}
               </Text>
               <ArrowForwardIcon color="white" />
-            </Button>
+            </ButtonLottery>
           </NavLink>
         </LeftWrapper>
         <RightWrapper>
-          <img src="/images/lottery/tombola.png" alt="lottery bunny" />
+          <img src="/images/lottery/logo_bitkub.png" alt="lottery bunny" />
         </RightWrapper>
       </Inner>
     </Wrapper>

@@ -32,6 +32,7 @@ const PredictionLive = styled(Text)`
   }
 `
 
+
 const PredictionOver = styled(Text)`
   font-size: 36px;
   line-height: 1.1;
@@ -76,6 +77,11 @@ const PredictionTryNow = styled(Flex)`
     max-width: none;
   }
 `
+const ButtonPromotion = styled(Button)`
+  background: #02D767;
+ 
+  }
+`
 
 const PredictionPromotionCard = () => {
   const { t } = useTranslation()
@@ -117,12 +123,12 @@ const PredictionPromotionCard = () => {
   return (
     <StyledPredictionCard>
       <CardBody>
-        <PredictionLive mb="24px">{t('Predictions Now Live')}</PredictionLive>
-        <PredictionOver bold color="#7645d9">
+        <PredictionLive color="#02D767" mb="24px">{t('Predictions Now Live')}</PredictionLive>
+        <PredictionOver bold color="#02D767">
           {over}
         </PredictionOver>
         {bnbWonInUsd ? (
-          <PredictionWon mb="24px" color="#7645d9" bold prefix="$" decimals={0} value={bnbWonInUsd} />
+          <PredictionWon mb="24px" color="#02D767" bold prefix="$" decimals={0} value={bnbWonInUsd} />
         ) : (
           <>
             <StyledSkeleton animation="pulse" variant="rect" mb="24px" width={180} />
@@ -136,14 +142,14 @@ const PredictionPromotionCard = () => {
           *{t('Beta Version')}
         </Text>
         <Link href="https://pancakeswap.finance/prediction" id="homepage-prediction-cta">
-          <Button px={['14px', null, null, null, '20px']}>
+          <ButtonPromotion px={['14px', null, null, null, '20px']}>
             <PredictionTryNow>
               <Text color="white" bold fontSize="16px">
                 {t('Try Now')}
               </Text>
               <ArrowForwardIcon color="white" />
             </PredictionTryNow>
-          </Button>
+          </ButtonPromotion>
         </Link>
       </CardBody>
     </StyledPredictionCard>

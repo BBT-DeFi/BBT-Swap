@@ -12,7 +12,7 @@ import {
 } from './RibbonStyles'
 import { Heading2Text, VisuallyHiddenHeading2Text } from '../CompetitionHeadingText'
 
-const Wrapper = styled(Flex)<{ ribbonDirection?: 'up' | 'down' }>`
+const Wrapper = styled(Flex) <{ ribbonDirection?: 'up' | 'down' }>`
   position: relative;
   display: inline-flex;
   align-items: ${({ ribbonDirection }) => (ribbonDirection === 'up' ? 'flex-end' : 'flex-start')};
@@ -24,7 +24,7 @@ const TextWrapper = styled(Flex)`
   align-items: center;
   position: absolute;
   height: 46px;
-  background-color: #7645d9;
+  background-color: #02D767;
 `
 
 const LaurelWrapper = styled.div<{ dir?: 'left' | 'right' }>`

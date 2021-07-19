@@ -44,7 +44,7 @@ const LotteryPromotionCard: React.FC<{ currentLotteryPrize: string }> = ({ curre
           <Heading color="contrast" scale="lg">
             {t('Lottery')} V2
           </Heading>
-          <PrizeText color="#7645d9" fontSize="40px" bold lineHeight="1.1">
+          <PrizeText color="#02D767" fontSize="40px" bold lineHeight="1.1">
             {over}
           </PrizeText>
           {prizeInBusd.isNaN() ? (
@@ -52,7 +52,7 @@ const LotteryPromotionCard: React.FC<{ currentLotteryPrize: string }> = ({ curre
               <Skeleton height={60} width={210} />
             </>
           ) : (
-            <Balance fontSize="40px" color="#7645d9" bold lineHeight="1.1" prefix="$" decimals={0} value={prizeTotal} />
+            <Balance fontSize="40px" color="#02D767" bold lineHeight="1.1" prefix="$" decimals={0} value={prizeTotal} />
           )}
           <Flex justifyContent="space-between">
             <PrizeText color="contrast" fontSize="28px" bold lineHeight="1.1">

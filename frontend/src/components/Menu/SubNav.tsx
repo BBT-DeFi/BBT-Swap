@@ -5,6 +5,12 @@ import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
 
 const StyledNav = styled.nav`
   margin-bottom: 40px;
+  .dlqLfN {
+    background-color: #02d767;
+  }
+  .gbIzQI {
+    color: black;
+  }
 `
 
 const getActiveIndex = (pathname: string): number => {

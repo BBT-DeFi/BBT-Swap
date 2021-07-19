@@ -61,7 +61,7 @@ const FarmedStakingCard = () => {
   return (
     <StyledFarmStakingCard>
       <CardBody>
-        <Heading scale="xl" mb="24px">
+        <Heading scale="xl" mb="24px" color="#02D767">
           {t('Farms & Staking')}
         </Heading>
         <CardImage src="/images/lottery/bitkub.png" alt="cake logo" width={64} height={64} />

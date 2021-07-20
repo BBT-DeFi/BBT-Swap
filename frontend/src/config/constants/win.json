@@ -1,0 +1,33 @@
+{
+    "name": "PancakeSwap Top 100",
+    "timestamp": "2021-07-12T03:09:13.797Z",
+    "version": {
+      "major": 2,
+      "minor": 16,
+      "patch": 1
+    },
+    "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/logo.png",
+    "keywords": [
+      "pancakeswap",
+      "top 100"
+    ],
+    "tokens": [
+      {
+        "name": "Cardano Token",
+        "symbol": "ADA",
+        "address": "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47",
+        "chainId": 25925,
+        "decimals": 18,
+        "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png"
+      },
+      {
+        "name": "ALICE",
+        "symbol": "ALICE",
+        "address": "0xAC51066d7bEC65Dc4589368da368b212745d63E8",
+        "chainId": 25925,
+        "decimals": 6,
+        "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0xAC51066d7bEC65Dc4589368da368b212745d63E8/logo.png"
+      }
+
+    ]
+  }

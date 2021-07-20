@@ -28,6 +28,7 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
     if (!chainId) return {}
 
     // reduce to just tokens
+    console.log(tokenMap)
     const mapWithoutUrls = Object.keys(tokenMap[chainId]).reduce<{ [address: string]: Token }>((newMap, address) => {
       newMap[address] = tokenMap[chainId][address].token
       return newMap
@@ -66,10 +67,13 @@ export function useAllTokens(): { [address: string]: Token } {
 export function useAllInactiveTokens(): { [address: string]: Token } {
   // get inactive tokens
   const inactiveTokensMap = useCombinedInactiveList()
+  // console.log(inactiveTokensMap)
   const inactiveTokens = useTokensFromMap(inactiveTokensMap, false)
+  // console.log(inactiveTokens)
 
   // filter out any token that are on active list
   const activeTokensAddresses = Object.keys(useAllTokens())
+  // console.log(activeTokensAddresses)
   const filteredInactive = activeTokensAddresses
     ? Object.keys(inactiveTokens).reduce<{ [address: string]: Token }>((newMap, address) => {
         if (!activeTokensAddresses.includes(address)) {
@@ -78,7 +82,7 @@ export function useAllInactiveTokens(): { [address: string]: Token } {
         return newMap
       }, {})
     : inactiveTokens
-
+  // console.log(filteredInactive)
   return filteredInactive
 }
 

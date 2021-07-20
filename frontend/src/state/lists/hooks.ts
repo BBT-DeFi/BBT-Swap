@@ -159,6 +159,7 @@ export function useCombinedActiveList(): TokenAddressMap {
 // all tokens from inactive lists
 export function useCombinedInactiveList(): TokenAddressMap {
   const allInactiveListUrls: string[] = useInactiveListUrls()
+  console.log(allInactiveListUrls)
   return useCombinedTokenMapFromUrls(allInactiveListUrls)
 }
 

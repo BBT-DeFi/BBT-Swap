@@ -28,6 +28,8 @@ export const UK: Language = { locale: 'uk-UA', language: 'Українська',
 export const VI: Language = { locale: 'vi-VN', language: 'Tiếng Việt', code: 'vi' }
 export const ZHCN: Language = { locale: 'zh-CN', language: '简体中文', code: 'zh-cn' }
 export const ZHTW: Language = { locale: 'zh-TW', language: '繁體中文', code: 'zh-tw' }
+export const TH: Language = { locale: 'th-TH', language: 'ภาษาไทย', code: 'th' }
+
 
 export const languages = {
   'ar-SA': AR,
@@ -58,6 +60,7 @@ export const languages = {
   'vi-VN': VI,
   'zh-CN': ZHCN,
   'zh-TW': ZHTW,
+  'th-TH': TH,
 }
 
 export const languageList = Object.values(languages)

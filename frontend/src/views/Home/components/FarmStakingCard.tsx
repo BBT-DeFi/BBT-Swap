@@ -66,7 +66,7 @@ const FarmedStakingCard = () => {
         </Heading>
         <CardImage src="/images/lottery/bitkub.png" alt="cake logo" width={64} height={64} />
         <Block>
-          <Label>{t('CAKE to Harvest')}:</Label>
+          <Label color="#02D767">{t('CAKE to Harvest')}:</Label>
           <CakeHarvestBalance farmsWithBalance={balancesWithValue} />
         </Block>
         <Block>

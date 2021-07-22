@@ -35,6 +35,39 @@
       "decimals": 18,
       "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png",
       "address": "0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5"
+    },
+    {
+      "name": "TokenA",
+      "symbol": "A",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png",
+      "address": "0x7d7e6a44118E9BaeF79e74C25054101F32cDF983"
+    },
+    {
+      "name": "TokenB",
+      "symbol": "B",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png",
+      "address": "0x34E2c2A078B220dF7f7CCf0D0Aca5dbAA4A1C282"
+    },
+    {
+      "name": "TokenC",
+      "symbol": "C",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png",
+      "address": "0x8d3f483E33faf642323D36A8fAEA6F2b2CD112D9"
+    },
+    {
+      "name": "TokenD",
+      "symbol": "D",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png",
+      "address": "0xe55FE8516946aeE1924ca7AD08056A5e6eB6F956"
     }
+    
   ]
 }

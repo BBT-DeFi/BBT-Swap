@@ -2619,7 +2619,7 @@
 
 "@pancakeswap/uikit@https://github.com/thanakiat-gusgus/bbt-uikit.git#master":
   version "0.41.0"
-  resolved "https://github.com/thanakiat-gusgus/bbt-uikit.git#454d2c387b9f0f03c66defba3cb283a1a80e41fa"
+  resolved "https://github.com/thanakiat-gusgus/bbt-uikit.git#eadd10d82cdfc6247cc404b45eb6f4b0d3c1adc6"
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"

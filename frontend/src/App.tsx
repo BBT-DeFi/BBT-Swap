@@ -28,7 +28,7 @@ import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 const FarmAuction = lazy(() => import('./views/FarmAuction'))
-const Lottery = lazy(() => import('./views/Lottery'))
+// const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
 const Collectibles = lazy(() => import('./views/Collectibles'))
@@ -53,7 +53,7 @@ BigNumber.config({
 
 const App: React.FC = () => {
   usePollBlockNumber()
-  useEagerConnect()
+  // useEagerConnect()
   useFetchProfile()
   usePollCoreFarmData()
 
@@ -76,9 +76,9 @@ const App: React.FC = () => {
             <Route path="/pools">
               <Pools />
             </Route>
-            <Route path="/lottery">
+            {/* <Route path="/lottery">
               <Lottery />
-            </Route>
+            </Route> */}
             <Route path="/ifo">
               <Ifos />
             </Route>

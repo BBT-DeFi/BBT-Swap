@@ -2604,10 +2604,9 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@pancakeswap/sdk@^2.3.2":
+"@pancakeswap/sdk@https://github.com/pichamonn/pancake-swap-sdk":
   version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@pancakeswap/sdk/-/sdk-2.3.2.tgz#35c986ac4965dff713bb06d523ffa34312a07228"
-  integrity sha512-ILwO8RsOF9hc/k63WkbUB36uAGPi4QWtPWv/smNAdzIM2F09VdaWL8/NsSdp8bB6cA4ZmqP2DUFsTMvLOodl0A==
+  resolved "https://github.com/pichamonn/pancake-swap-sdk#5328ec8484eb564b8645ec9fb58d972f0e5165d9"
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"

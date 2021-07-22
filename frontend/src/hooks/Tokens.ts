@@ -19,6 +19,7 @@ import { isAddress } from '../utils'
 import { useBytes32TokenContract, useTokenContract } from './useContract'
 import { filterTokens } from '../components/SearchModal/filtering'
 
+
 // reduce token map into standard address <-> Token mapping, optionally include user added tokens
 function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean): { [address: string]: Token } {
   const { chainId } = useActiveWeb3React()
@@ -29,6 +30,8 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
 
     // reduce to just tokens
     console.log(tokenMap)
+    console.log(chainId)
+    console.log(tokenMap[25925])
     const mapWithoutUrls = Object.keys(tokenMap[chainId]).reduce<{ [address: string]: Token }>((newMap, address) => {
       newMap[address] = tokenMap[chainId][address].token
       return newMap

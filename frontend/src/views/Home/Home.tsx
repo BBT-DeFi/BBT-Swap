@@ -88,11 +88,11 @@ const CTACards = styled(BaseLayout)`
 
 const Home: React.FC = () => {
   const { t } = useTranslation()
-  const { currentLotteryPrize } = useFetchLotteryForPromos()
+  // const { currentLotteryPrize } = useFetchLotteryForPromos()
 
   return (
     <>
-      <LotteryBanner currentLotteryPrize={currentLotteryPrize} />
+      {/* <LotteryBanner currentLotteryPrize={currentLotteryPrize} /> */}
       <Page>
         <Hero>
           <Heading as="h1" scale="xl" mb="24px" color="secondary">
@@ -102,13 +102,13 @@ const Home: React.FC = () => {
         </Hero>
         <div>
           <Cards>
-            <FarmStakingCard />
-            <PredictionPromotionCard />
+            {/* <FarmStakingCard /> */}
+            {/* <PredictionPromotionCard /> */}
           </Cards>
           <CTACards>
             <EarnAPRCard />
             <EarnAssetCard />
-            <LotteryPromotionCard currentLotteryPrize={currentLotteryPrize} />
+            {/* <LotteryPromotionCard currentLotteryPrize={currentLotteryPrize} /> */}
           </CTACards>
           <Cards>
             <CakeStats />

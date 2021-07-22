@@ -267,7 +267,7 @@ export default function Swap({ history }: RouteComponentProps) {
   return (
     <Page>
       <AppBody>
-        <AppHeader title={t('Exchange')} subtitle={t('Trade tokens in an instant testtest')} />
+        <AppHeader title={t('Exchange')} subtitle={t('Trade tokens in an instant')} />
         <Wrapper id="swap-page">
           <AutoColumn gap="md">
             <CurrencyInputPanel

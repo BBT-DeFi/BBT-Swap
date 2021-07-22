@@ -20,7 +20,7 @@ const QuestionHelper: React.FC<Props> = ({ text, ...props }) => {
     <Box {...props}>
       {tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef}>
-        <HelpIcon color="black" width="16px" />
+        <HelpIcon color="textSubtle" width="16px" />
       </QuestionWrapper>
     </Box>
   )

@@ -26,9 +26,6 @@ import { RowProps } from './components/FarmTable/Row'
 import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema, ViewMode } from './components/types'
 
-const ToggleInput = styled(Toggle)`
-
-`
 const ControlContainer = styled.div`
   display: flex;
   width: 100%;
@@ -47,27 +44,11 @@ const ControlContainer = styled.div`
   }
 `
 
-
 const ToggleWrapper = styled.div`
-//Hover Toggle
-
   display: flex;
   align-items: center;
   margin-left: 10px;
 
-  .cRtcwJ{
-    background-color:#02D767;
-  }
-  .ffFWKU{
-    background-color:#02D767;
-  }
-  .kzdlOT:hover + .sc-hmbstg:not(:disabled):not(:checked) {
-    box-shadow: 0px 0px 0px 3px #02D767;
-  }
-  .kzdlOT:focus + .sc-hmbstg {
-  box-shadow: 0px 0px 0px 3px #02D767;
-  }
-}
   ${Text} {
     margin-left: 8px;
   }
@@ -395,7 +376,7 @@ const Farms: React.FC = () => {
   return (
     <>
       <PageHeader>
-        <Heading as="h1" scale="xxl" color="#02D767" mb="24px"> {/* edit color font header */}
+        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
           {t('Farms')}
         </Heading>
         <Heading scale="lg" color="text">
@@ -403,10 +384,10 @@ const Farms: React.FC = () => {
         </Heading>
         <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
           <Button p="0" variant="text">
-            <Text color="#02D767" bold fontSize="16px" mr="4px">
+            <Text color="primary" bold fontSize="16px" mr="4px">
               {t('Community Auctions')}
             </Text>
-            <ArrowForwardIcon color="#02D767" />
+            <ArrowForwardIcon color="primary" />
           </Button>
         </NavLink>
       </PageHeader>
@@ -415,7 +396,7 @@ const Farms: React.FC = () => {
           <ViewControls>
             <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
             <ToggleWrapper>
-              <ToggleInput checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
+              <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
               <Text> {t('Staked only')}</Text>
             </ToggleWrapper>
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
@@ -457,7 +438,7 @@ const Farms: React.FC = () => {
         </ControlContainer>
         {renderContent()}
         <div ref={loadMoreRef} />
-        <StyledImage src="/images/kubcoin.png" alt="Pancake illustration" width={110} height={103} />
+        <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
       </Page>
     </>
   )

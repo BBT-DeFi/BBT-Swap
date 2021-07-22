@@ -12,7 +12,7 @@ const Container = styled.div`
   width: 100%;
   justify-content: flex-end;
   padding-right: 8px;
-  color: #02D767;
+  color: ${({ theme }) => theme.colors.primary};
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-right: 0px;
@@ -32,7 +32,7 @@ const Details: React.FC<DetailsProps> = ({ actionPanelToggled }) => {
   return (
     <Container>
       {!isMobile && t('Details')}
-      <ArrowIcon color="#02D767" toggled={actionPanelToggled} />
+      <ArrowIcon color="primary" toggled={actionPanelToggled} />
     </Container>
   )
 }

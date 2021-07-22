@@ -11,10 +11,6 @@ interface PoolsTableProps {
   account: string
 }
 
-const ButtonScroll = styled(Button)`
-  color:#02D767;
-`
-
 const StyledTable = styled.div`
   border-radius: ${({ theme }) => theme.radii.card};
 
@@ -58,10 +54,10 @@ const PoolsTable: React.FC<PoolsTableProps> = ({ pools, userDataLoaded, account 
           />
         ))}
         <ScrollButtonContainer>
-          <ButtonScroll variant="text" onClick={scrollToTop}>
+          <Button variant="text" onClick={scrollToTop}>
             {t('To Top')}
-            <ChevronUpIcon color="#02D767" />
-          </ButtonScroll>
+            <ChevronUpIcon color="primary" />
+          </Button>
         </ScrollButtonContainer>
       </StyledTable>
     </StyledTableBorder>

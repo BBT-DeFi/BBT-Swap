@@ -24,10 +24,6 @@ const IconButtonWrapper = styled.div`
   display: flex;
 `
 
-const ButtonEnable = styled(Button)`
-background:#02D767;
-`
-
 interface StackedActionProps {
   pool: Pool
   userDataLoaded: boolean
@@ -174,9 +170,9 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
           </Text>
         </ActionTitles>
         <ActionContent>
-          <ButtonEnable width="100%" disabled={requestedApproval} onClick={handleApprove}>
+          <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
             {t('Enable')}
-          </ButtonEnable>
+          </Button>
         </ActionContent>
       </ActionContainer>
     )

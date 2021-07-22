@@ -79,10 +79,10 @@ const BattleCta: React.FC<CompetitionProps> = ({
 
   const isButtonDisabled = Boolean(
     isLoading ||
-    currentPhase.state === OVER ||
-    registeredAndNotStarted ||
-    finishedAndPrizesClaimed ||
-    finishedAndNothingToClaim,
+      currentPhase.state === OVER ||
+      registeredAndNotStarted ||
+      finishedAndPrizesClaimed ||
+      finishedAndNothingToClaim,
   )
 
   const getHeadingText = () => {

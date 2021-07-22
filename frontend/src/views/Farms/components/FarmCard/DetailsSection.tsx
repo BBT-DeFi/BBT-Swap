@@ -17,7 +17,6 @@ const Wrapper = styled.div`
 `
 
 const StyledLinkExternal = styled(LinkExternal)`
-  color:#02D767;
   font-weight: 400;
 `
 
@@ -38,10 +37,10 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         {totalValueFormatted ? <Text>{totalValueFormatted}</Text> : <Skeleton width={75} height={25} />}
       </Flex>
       {!removed && (
-        <StyledLinkExternal href={addLiquidityUrl} color='#02D767'>{t('Get %symbol%', { symbol: lpLabel })}</StyledLinkExternal>
+        <StyledLinkExternal href={addLiquidityUrl}>{t('Get %symbol%', { symbol: lpLabel })}</StyledLinkExternal>
       )}
-      <StyledLinkExternal href={bscScanAddress} color='#02D767'>{t('View Contract')}</StyledLinkExternal>
-      <StyledLinkExternal href={infoAddress} color='#02D767'>{t('See Pair Info')}</StyledLinkExternal>
+      <StyledLinkExternal href={bscScanAddress}>{t('View Contract')}</StyledLinkExternal>
+      <StyledLinkExternal href={infoAddress}>{t('See Pair Info')}</StyledLinkExternal>
     </Wrapper>
   )
 }

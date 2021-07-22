@@ -62,9 +62,22 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
   const result = listCache?.get(list)
   if (result) return result
 
+  console.log(list)
+
+  const Test : TokenInfo = {
+    name: "Test",
+    symbol: "TEST",
+    chainId: 25925,
+    decimals: 18,
+    logoURI: 'https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47/logo.png',
+    address: "0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5"
+  }
+
+
+
   const map = list.tokens.reduce<TokenAddressMap>(
     (tokenMap, tokenInfo) => {
-      console.log(tokenInfo)
+      // console.log(tokenInfo)
       const tags: TagInfo[] =
         tokenInfo.tags
           ?.map((tagId) => {
@@ -74,7 +87,7 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
           ?.filter((x): x is TagInfo => Boolean(x)) ?? []
       const token = new WrappedTokenInfo(tokenInfo, tags)
       if (tokenMap[token.chainId][token.address] !== undefined) throw Error('Duplicate tokens.')
-      // console.log(token)
+      console.log(token.chainId)
       return {
         [token.chainId]: {
           ...tokenMap[token.chainId],
@@ -88,6 +101,7 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
     { ...EMPTY_LIST },
   )
   listCache?.set(list, map)
+  console.log(map)
   return map
 }
 

@@ -151,12 +151,12 @@ const Pools: React.FC = () => {
             }
             return pool.isAutoVault
               ? getCakeVaultEarnings(
-                account,
-                cakeAtLastUserAction,
-                userShares,
-                pricePerFullShare,
-                pool.earningTokenPrice,
-              ).autoUsdToDisplay
+                  account,
+                  cakeAtLastUserAction,
+                  userShares,
+                  pricePerFullShare,
+                  pool.earningTokenPrice,
+                ).autoUsdToDisplay
               : pool.userData.pendingReward.times(pool.earningTokenPrice).toNumber()
           },
           'desc',
@@ -209,7 +209,7 @@ const Pools: React.FC = () => {
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="#02D767" mb="24px"> {/* edit color font header */}
+            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
               {t('Syrup Pools')}
             </Heading>
             <Heading scale="md" color="text">
@@ -283,7 +283,7 @@ const Pools: React.FC = () => {
         <Image
           mx="auto"
           mt="12px"
-          src="/images/kubcoin.png"
+          src="/images/decorations/3d-syrup-bunnies.png"
           alt="Pancake illustration"
           width={192}
           height={184.5}

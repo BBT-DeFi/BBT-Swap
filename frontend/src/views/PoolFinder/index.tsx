@@ -72,7 +72,7 @@ export default function PoolFinder() {
 
   const prerequisiteMessage = (
     <LightCard padding="45px 10px">
-      <Text textAlign="center" color="#02D767">
+      <Text textAlign="center">
         {!account ? t('Connect to a wallet to find pools') : t('Select a token to find your liquidity.')}
       </Text>
     </LightCard>
@@ -104,14 +104,10 @@ export default function PoolFinder() {
             {currency0 ? (
               <Row>
                 <CurrencyLogo currency={currency0} />
-                <Text ml="8px" color="black">
-                  {currency0.symbol}
-                </Text>
+                <Text ml="8px">{currency0.symbol}</Text>
               </Row>
             ) : (
-              <Text ml="8px" color="black">
-                {t('Select a Token')}
-              </Text>
+              <Text ml="8px">{t('Select a Token')}</Text>
             )}
           </StyledButton>
 
@@ -129,14 +125,10 @@ export default function PoolFinder() {
             {currency1 ? (
               <Row>
                 <CurrencyLogo currency={currency1} />
-                <Text ml="8px" color="black">
-                  {currency1.symbol}
-                </Text>
+                <Text ml="8px">{currency1.symbol}</Text>
               </Row>
             ) : (
-              <Text as={Row} color="black">
-                {t('Select a Token')}
-              </Text>
+              <Text as={Row}>{t('Select a Token')}</Text>
             )}
           </StyledButton>
 
@@ -158,13 +150,9 @@ export default function PoolFinder() {
               ) : (
                 <LightCard padding="45px 10px">
                   <AutoColumn gap="sm" justify="center">
-                    <Text textAlign="center" color="#02D767">
-                      {t('You don’t have liquidity in this pool yet.')}
-                    </Text>
+                    <Text textAlign="center">{t('You don’t have liquidity in this pool yet.')}</Text>
                     <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                      <Text textAlign="center" color="#02D767">
-                        {t('Add Liquidity')}
-                      </Text>
+                      <Text textAlign="center">{t('Add Liquidity')}</Text>
                     </StyledInternalLink>
                   </AutoColumn>
                 </LightCard>

@@ -146,12 +146,12 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
         </Flex>
       )}
       <Flex mb="2px" justifyContent="flex-end">
-        <LinkExternal href={`https://pancakeswap.info/token/${getAddress(earningToken.address)}`} bold={false} small color='#02D767'>
+        <LinkExternal href={`https://pancakeswap.info/token/${getAddress(earningToken.address)}`} bold={false} small>
           {t('See Token Info')}
         </LinkExternal>
       </Flex>
       <Flex mb="2px" justifyContent="flex-end">
-        <LinkExternal href={earningToken.projectLink} bold={false} small color='#02D767'>
+        <LinkExternal href={earningToken.projectLink} bold={false} small>
           {t('View Project Site')}
         </LinkExternal>
       </Flex>
@@ -161,7 +161,6 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
             href={`${BASE_BSC_SCAN_URL}/address/${isAutoVault ? cakeVaultContractAddress : poolContractAddress}`}
             bold={false}
             small
-            color='#02D767'
           >
             {t('View Contract')}
           </LinkExternal>
@@ -175,7 +174,7 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
             height="auto"
             onClick={() => registerToken(tokenAddress, earningToken.symbol, earningToken.decimals)}
           >
-            <Text color="#02D767" fontSize="14px">
+            <Text color="primary" fontSize="14px">
               {t('Add to Metamask')}
             </Text>
             <MetamaskIcon ml="4px" />

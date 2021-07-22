@@ -4,7 +4,7 @@ import { useTranslation } from 'contexts/Localization'
 import { escapeRegExp } from '../../utils'
 
 const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: string }>`
-  color: #0cbd60;
+  color: ${({ error, theme }) => (error ? theme.colors.failure : theme.colors.text)};
   width: 0;
   position: relative;
   font-weight: 500;
@@ -34,7 +34,7 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   }
 
   ::placeholder {
-    color: #0cbd60;
+    color: ${({ theme }) => theme.colors.textSubtle};
   }
 `
 

@@ -87,7 +87,7 @@ const EarnAPRCard = () => {
           <Heading color="contrast" scale="lg">
             {earnUpTo}
           </Heading>
-          <CardMidContent color="#02D767">
+          <CardMidContent color="#7645d9">
             {highestApr && !isFetchingFarmData ? (
               `${highestApr}%`
             ) : (

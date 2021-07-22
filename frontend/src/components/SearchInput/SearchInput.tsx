@@ -7,14 +7,6 @@ import { useTranslation } from 'contexts/Localization'
 const StyledInput = styled(Input)`
   border-radius: 16px;
   margin-left: auto;
-  background:transparent;
-  border: 1px solid #ccc;
-  &:focus:not(:disabled) {
-    box-shadow: 0px 0px 0px 1px #02D767, 0px 0px 0px 4px #02D767;
-  }
-  &::-webkit-input-placeholder { /* Edge */
-    color: ${({ theme }) => theme.colors.text};
-  }
 `
 
 const InputWrapper = styled.div`

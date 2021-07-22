@@ -1,11 +1,11 @@
 {
-  "short_name": "BBTSwap",
-  "name": "BBTSwap",
+  "short_name": "PancakeSwap",
+  "name": "PancakeSwap",
   "description": "Farm CAKE with Pancake LP Tokens",
   "homepage_url": "https://pancakeswap.finance",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#02D767",
+  "theme_color": "#1FC7D4",
   "background_color": "#ffffff",
   "orientation": "portrait",
   "icons": [

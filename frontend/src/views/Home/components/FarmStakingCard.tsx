@@ -12,10 +12,10 @@ import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/lottery/bitkub.png');
+  background-image: url('/images/logo_bbt.png') ;
   background-repeat: no-repeat;
   background-position: top right;
-  min-height: 376px;
+  min-height: 100px;
 `
 
 const Block = styled.div`
@@ -61,10 +61,10 @@ const FarmedStakingCard = () => {
   return (
     <StyledFarmStakingCard>
       <CardBody>
-        <Heading scale="xl" mb="24px" color="bbtColor">
+        <Heading scale="xl" mb="24px" color="textBitkub">
           {t('Farms & Staking')}
         </Heading>
-        <CardImage src="/images/lottery/logo_bitkub.png" alt="cake logo" width={100} height={100} />
+        <CardImage src="/images/bitkub.png" alt="cake logo" width={150} height={150} />
         <Block>
           <Label>{t('CAKE to Harvest')}:</Label>
           <CakeHarvestBalance farmsWithBalance={balancesWithValue} />

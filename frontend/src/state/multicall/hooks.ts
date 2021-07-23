@@ -207,7 +207,6 @@ export function useMultipleContractSingleData(
         : undefined,
     [callInputs, contractInterface, fragment],
   )
-
   const calls = useMemo(
     () =>
       fragment && addresses && addresses.length > 0 && callData

@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { Interface } from '@ethersproject/abi'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+// import Web3 from 'web3';
 
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
@@ -19,6 +20,8 @@ export enum PairState {
 
 export function usePairs(currencies: [Currency | undefined, Currency | undefined][]): [PairState, Pair | null][] {
   const { chainId } = useActiveWeb3React()
+  // const {library} = useActiveWeb3React();
+
 
   const tokens = useMemo(
     () =>
@@ -30,16 +33,18 @@ export function usePairs(currencies: [Currency | undefined, Currency | undefined
   )
 
   const pairAddresses = useMemo(
-    () =>
-      tokens.map(([tokenA, tokenB]) => {
+    () => {
+      return tokens.map(([tokenA, tokenB]) => {
         return tokenA && tokenB && !tokenA.equals(tokenB) ? Pair.getAddress(tokenA, tokenB) : undefined
-      }),
+      })
+    } ,
     [tokens],
   )
   console.log(pairAddresses)
 
+  // const pairAddresses1 = ["0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"]
   const results = useMultipleContractSingleData(pairAddresses, PAIR_INTERFACE, 'getReserves')
-  console.log(results)
+
   return useMemo(() => {
     return results.map((result, i) => {
       const { result: reserves, loading } = result

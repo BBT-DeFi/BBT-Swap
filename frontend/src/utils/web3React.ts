@@ -38,7 +38,7 @@ export const getLibrary = (provider): ethers.providers.Web3Provider => {
  */
 export const signMessage = async (provider: any, account: string, message: string): Promise<string> => {
   if (window.BinanceChain) {
-    const { signature } = await window.BinanceChain.bnbSign(account, message)
+    const { signature } = await window.BinanceChain.bnbSign(account, message) 
     return signature
   }
 

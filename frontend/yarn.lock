@@ -2606,7 +2606,11 @@
 
 "@pancakeswap/sdk@https://github.com/pichamonn/pancake-swap-sdk.git":
   version "2.3.2"
+<<<<<<< Updated upstream
   resolved "https://github.com/pichamonn/pancake-swap-sdk.git#19f04622f8b8ab12af34f5d67ca2b19023813bb2"
+=======
+  resolved "https://github.com/pichamonn/pancake-swap-sdk#19f04622f8b8ab12af34f5d67ca2b19023813bb2"
+>>>>>>> Stashed changes
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"

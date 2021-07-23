@@ -117,7 +117,7 @@ const PredictionPromotionCard = () => {
   return (
     <StyledPredictionCard>
       <CardBody>
-        <PredictionLive mb="24px">{t('Predictions Now Live')}</PredictionLive>
+        <PredictionLive mb="24px" color="bbtColor">{t('Predictions Now Live')}</PredictionLive>
         <PredictionOver bold color="#7645d9">
           {over}
         </PredictionOver>

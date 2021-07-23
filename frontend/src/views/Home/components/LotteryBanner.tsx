@@ -17,7 +17,7 @@ const NowLive = styled(Text)`
 `
 
 const Wrapper = styled.div`
-  background-image: linear-gradient(#7645d9, #452a7a);
+  background-image: linear-gradient(180deg, rgba(2, 215, 103, 0.24) 0%, rgba(2, 215, 103, 0) 100%);
   max-height: max-content;
   overflow: hidden;
   ${({ theme }) => theme.mediaQueries.md} {
@@ -131,7 +131,7 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
           </NavLink>
         </LeftWrapper>
         <RightWrapper>
-          <img src="/images/lottery/tombola.png" alt="lottery bunny" />
+          <img src="/images/lottery/logo_bitkub.png" alt="lottery bunny" />
         </RightWrapper>
       </Inner>
     </Wrapper>

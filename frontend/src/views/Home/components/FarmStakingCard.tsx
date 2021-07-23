@@ -12,7 +12,7 @@ import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/cake-bg.svg');
+  background-image: url('/images/lottery/bitkub.png');
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 376px;
@@ -61,10 +61,10 @@ const FarmedStakingCard = () => {
   return (
     <StyledFarmStakingCard>
       <CardBody>
-        <Heading scale="xl" mb="24px">
+        <Heading scale="xl" mb="24px" color="bbtColor">
           {t('Farms & Staking')}
         </Heading>
-        <CardImage src="/images/cake.svg" alt="cake logo" width={64} height={64} />
+        <CardImage src="/images/lottery/logo_bitkub.png" alt="cake logo" width={100} height={100} />
         <Block>
           <Label>{t('CAKE to Harvest')}:</Label>
           <CakeHarvestBalance farmsWithBalance={balancesWithValue} />
@@ -84,8 +84,8 @@ const FarmedStakingCard = () => {
               {pendingTx
                 ? t('Collecting CAKE')
                 : t('Harvest all (%count%)', {
-                    count: balancesWithValue.length,
-                  })}
+                  count: balancesWithValue.length,
+                })}
             </Button>
           ) : (
             <UnlockButton width="100%" />

@@ -100,7 +100,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [],
         )}
       </CardBody>
       <CardFooter p="0">
-        <DetailsButton width="100%" endIcon={<Icon width="24px" color="primary" />} onClick={handleClick}>
+        <DetailsButton width="100%" endIcon={<Icon width="24px" color="bitkub" />} onClick={handleClick}>
           {t('Details')}
         </DetailsButton>
         {isOpen && (

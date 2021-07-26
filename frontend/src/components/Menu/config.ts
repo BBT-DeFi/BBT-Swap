@@ -19,10 +19,6 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
         label: t('Liquidity'),
         href: '/pool',
       },
-      {
-        label: t('LP Migration'),
-        href: 'https://v1exchange.pancakeswap.finance/#/migrate',
-      },
     ],
   },
   {

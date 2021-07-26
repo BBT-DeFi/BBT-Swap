@@ -1,5 +1,5 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@pancakeswap/sdk'
-import { BUSD, DAI, USDT, BTCB, CAKE, WBNB, UST, ETH, USDC } from './tokens'
+import { BUSD, DAI, USDT, BTCB, CAKE, WBNB, UST, ETH, USDC, BBT, KDAI, KETH } from './tokens'
 
 export const ROUTER_ADDRESS = '0x5c857afD739F478055977dF3B86d82D710f58197'
 
@@ -33,7 +33,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.MAINNET]: [BUSD[ChainId.MAINNET], CAKE[ChainId.MAINNET], BTCB],
+  [ChainId.MAINNET]: [KDAI[ChainId.MAINNET], BBT[ChainId.MAINNET], KETH],
   [ChainId.TESTNET]: [WETH[ChainId.TESTNET], CAKE[ChainId.TESTNET], BUSD[ChainId.TESTNET]],
 }
 

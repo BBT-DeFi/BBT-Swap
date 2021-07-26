@@ -95,10 +95,10 @@ const Home: React.FC = () => {
       {/* <LotteryBanner currentLotteryPrize={currentLotteryPrize} /> */}
       <Page>
         <Hero>
-          <Heading as="h1" scale="xl" mb="24px" color="secondary">
-            {t('PancakeSwap')}
+          <Heading as="h1" scale="xl" mb="24px" color="bbtColor">
+            {t('BBT Swap')}
           </Heading>
-          <Text>{t('The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
+          <Text>{t('The #1 AMM and yield farm on Bitkub Chain.')}</Text>
         </Hero>
         <div>
           <Cards>

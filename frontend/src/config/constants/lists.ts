@@ -1,12 +1,12 @@
-const PANCAKE_EXTENDED = 'https://tokens.pancakeswap.finance/pancakeswap-extended.json'
-const PANCAKE_TOP100 = 'https://raw.githubusercontent.com/KombangkoeDias/json/main/win.json'
+const BBT_OFFICIAL = 'https://aimploychanok.github.io/api/bbt-official.json'
+const BBT_SAMPLE = 'https://aimploychanok.github.io/api/bbt-sample.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = []
 
 // lower index == higher priority for token import
 export const DEFAULT_LIST_OF_LISTS: string[] = [
-  PANCAKE_TOP100,
-  PANCAKE_EXTENDED,
+  BBT_OFFICIAL,
+  BBT_SAMPLE,
   ...UNSUPPORTED_LIST_URLS, // need to load unsupported tokens as well
 ]
 

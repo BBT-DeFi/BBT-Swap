@@ -18,22 +18,22 @@ const farms: FarmConfig[] = [
   },
   {
     pid: 251,
-    lpSymbol: 'CAKE-BNB LP',
+    lpSymbol: 'A-B LP',
     lpAddresses: {
-      97: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
-      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
-      25925 : '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0'
+      97: '',
+      56: '',
+      25925 : '0x2D105fF34641dc54cf7D17df7161C6867DA3f68B'
     },
     token: tokens.cake,
     quoteToken: tokens.wbnb,
   },
   {
     pid: 252,
-    lpSymbol: 'BUSD-BNB LP',
+    lpSymbol: 'C-D LP',
     lpAddresses: {
       97: '',
-      56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
-      25925: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16'
+      56: '',
+      25925: '0x6Bc840CDbf504360Aa2dDbD02Bd70Fa7C95C084B'
     },
     token: tokens.busd,
     quoteToken: tokens.wbnb,

@@ -101,7 +101,7 @@ const EarnAPRCard = () => {
             <Heading color="contrast" scale="lg">
               {InFarms}
             </Heading>
-            <ArrowForwardIcon mt={30} color="primary" />
+            <ArrowForwardIcon mt={30} color="bbtColor" />
           </Flex>
         </CardBody>
       </NavLink>

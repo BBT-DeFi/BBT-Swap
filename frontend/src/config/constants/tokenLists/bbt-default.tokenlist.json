@@ -1,0 +1,46 @@
+{
+  "name": "BBT Default List",
+  "timestamp": "2021-05-06T00:00:00Z",
+  "version": {
+    "major": 3,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://bitkubcoin.com/wp-content/uploads/2021/05/Bitkub-Coin.png",
+  "keywords": ["bbt", "default"],
+  "tokens": [
+    {
+      "name": "Token A",
+      "symbol": "A",
+      "address": "0x7d7e6a44118E9BaeF79e74C25054101F32cDF983",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "ipfs://QmSnxZwxeZHMG6K5o8Y4D4jac8ZatTfvmmLp3ETW2C6jiU"
+    },
+    {
+      "name": "Token B",
+      "symbol": "B",
+      "address": "0x34E2c2A078B220dF7f7CCf0D0Aca5dbAA4A1C282",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "ipfs://QmSnxZwxeZHMG6K5o8Y4D4jac8ZatTfvmmLp3ETW2C6jiU"
+    },
+    {
+      "name": "Token C",
+      "symbol": "C",
+      "address": "0x8d3f483E33faf642323D36A8fAEA6F2b2CD112D9",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "ipfs://QmSnxZwxeZHMG6K5o8Y4D4jac8ZatTfvmmLp3ETW2C6jiU"
+    },
+    {
+      "name": "Token D",
+      "symbol": "D",
+      "address": "0xe55FE8516946aeE1924ca7AD08056A5e6eB6F956",
+      "chainId": 25925,
+      "decimals": 18,
+      "logoURI": "ipfs://QmSnxZwxeZHMG6K5o8Y4D4jac8ZatTfvmmLp3ETW2C6jiU"
+    }
+  ]
+}

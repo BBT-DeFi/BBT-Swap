@@ -41,10 +41,10 @@ const LotteryPromotionCard: React.FC<{ currentLotteryPrize: string }> = ({ curre
     <StyledFarmStakingCard>
       <NavLink exact activeClassName="active" to="/lottery" id="lottery-pot-cta">
         <CardBody>
-          <Heading color="contrast" scale="lg">
+          <Heading color="textBitkub" scale="lg">
             {t('Lottery')} V2
           </Heading>
-          <PrizeText color="#7645d9" fontSize="40px" bold lineHeight="1.1">
+          <PrizeText color="textBitkub" fontSize="40px" bold lineHeight="1.1">
             {over}
           </PrizeText>
           {prizeInBusd.isNaN() ? (
@@ -52,10 +52,10 @@ const LotteryPromotionCard: React.FC<{ currentLotteryPrize: string }> = ({ curre
               <Skeleton height={60} width={210} />
             </>
           ) : (
-            <Balance fontSize="40px" color="#7645d9" bold lineHeight="1.1" prefix="$" decimals={0} value={prizeTotal} />
+            <Balance fontSize="40px" color="textBitkub" bold lineHeight="1.1" prefix="$" decimals={0} value={prizeTotal} />
           )}
           <Flex justifyContent="space-between">
-            <PrizeText color="contrast" fontSize="28px" bold lineHeight="1.1">
+            <PrizeText color="textBitkub" fontSize="28px" bold lineHeight="1.1">
               {inPrizes}
             </PrizeText>
             <ArrowForwardIcon mt={30} color="primary" />

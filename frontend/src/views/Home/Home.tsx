@@ -27,7 +27,7 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/lottery/bitkub.png'), url('/images/lottery/bitkub.png');
+    background-image: url('/images/logo_bbt.png'), url('/images/logo_bbt.png');
     background-position: left center, right center;
     height: 165px;
     padding-top: 0;
@@ -95,10 +95,10 @@ const Home: React.FC = () => {
       <LotteryBanner currentLotteryPrize={currentLotteryPrize} />
       <Page>
         <Hero>
-          <Heading as="h1" scale="xl" mb="24px" color="bbtColor">
+          <Heading as="h1" scale="xl" mb="24px" color="textBitkub">
             {t('BBT-Swap')}
           </Heading>
-          <Text color="bbtColor">{t('The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
+          <Text color="textBitkub">{t('The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
         </Hero>
         <div>
           <Cards>

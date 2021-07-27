@@ -2617,9 +2617,15 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
+<<<<<<< HEAD
 "@pancakeswap/uikit@https://github.com/thanakiat-gusgus/bbt-uikit.git#master":
   version "0.41.0"
   resolved "https://github.com/thanakiat-gusgus/bbt-uikit.git#eadd10d82cdfc6247cc404b45eb6f4b0d3c1adc6"
+=======
+"@pancakeswap/uikit@https://github.com/thanakiat-gusgus/bbt-uikit.git":
+  version "0.41.0"
+  resolved "https://github.com/thanakiat-gusgus/bbt-uikit.git#c8b788716af1a3f282ee565ba2bb11edad7e973c"
+>>>>>>> feature/home
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"

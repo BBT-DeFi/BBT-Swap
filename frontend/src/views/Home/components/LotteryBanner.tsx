@@ -103,7 +103,7 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
     <Wrapper>
       <Inner>
         <LeftWrapper>
-          <NowLive>{t('Lottery Now Live')}</NowLive>
+          <NowLive>{t('Lottery 1 Now Live')}</NowLive>
           <PrizeFlex>
             <Over fontSize="40px" color="textBitkub" bold mr="8px">
               {over}

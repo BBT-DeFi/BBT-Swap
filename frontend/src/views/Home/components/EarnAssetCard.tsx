@@ -8,7 +8,7 @@ import { Pool } from 'state/types'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledFarmStakingCard = styled(Card)`
-  background: linear-gradient(#53dee9, #7645d9);
+  background: linear-gradient(180deg, rgba(2, 215, 103, 0.24) 0%, rgba(2, 215, 103, 0) 100%);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -40,12 +40,12 @@ const EarnAssetCard = () => {
     <StyledFarmStakingCard>
       <NavLink exact activeClassName="active" to="/syrup" id="pool-cta">
         <CardBody>
-          <Heading color="contrast" scale="lg">
+          <Heading color="textBitkub" scale="lg">
             {earn}
           </Heading>
-          <CardMidContent color="invertedContrast">{assets}</CardMidContent>
+          <CardMidContent color="textBitkub">{assets}</CardMidContent>
           <Flex justifyContent="space-between">
-            <Heading color="contrast" scale="lg">
+            <Heading color="textBitkub" scale="lg">
               {InPools}
             </Heading>
             <ArrowForwardIcon mt={30} color="primary" />

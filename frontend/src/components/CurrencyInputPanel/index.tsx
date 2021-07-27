@@ -39,7 +39,7 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
 `
 const Container = styled.div<{ hideInput: boolean }>`
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: ${({ theme }) => theme.colors.disabled};
   box-shadow: ${({ theme }) => theme.shadows.inset};
 `
 interface CurrencyInputPanelProps {
@@ -95,7 +95,7 @@ export default function CurrencyInputPanel({
             <RowBetween>
               <Text fontSize="14px">{translatedLabel}</Text>
               {account && (
-                <Text onClick={onMax} fontSize="14px" style={{ display: 'inline', cursor: 'pointer' }}>
+                <Text onClick={onMax} fontSize="14px" color="bbtColor" style={{ display: 'inline', cursor: 'pointer' }}>
                   {!hideBalance && !!currency && selectedCurrencyBalance
                     ? t('Balance: %amount%', { amount: selectedCurrencyBalance?.toSignificant(6) ?? '' })
                     : ' -'}
@@ -115,7 +115,7 @@ export default function CurrencyInputPanel({
                 }}
               />
               {account && currency && showMaxButton && label !== 'To' && (
-                <Button onClick={onMax} scale="sm" variant="text">
+                <Button onClick={onMax} scale="sm" variant="bbtText">
                   MAX
                 </Button>
               )}

@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
-import { Button, Text, PancakeToggle, Flex, Message, Modal, ModalBody, InjectedModalProps } from '@pancakeswap/uikit'
+import {
+  Button,
+  Text,
+  PancakeToggle,
+  Flex,
+  Message,
+  Modal,
+  ModalBody,
+  InjectedModalProps,
+  Toggle,
+} from '@pancakeswap/uikit'
 import {
   useAudioModeManager,
   useExpertModeManager,
@@ -65,7 +75,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
     <Modal title="Settings" headerBackground="gradients.cardHeader" onDismiss={onDismiss}>
       <ModalBody>
         <AutoColumn gap="md" style={{ padding: '1rem' }}>
-          <Text bold fontSize="20px">
+          <Text bold fontSize="20px" color="bbtColor">
             {t('Transaction Settings')}
           </Text>
           <TransactionSettings
@@ -74,7 +84,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
             deadline={ttl}
             setDeadline={setTtl}
           />
-          <Text bold fontSize="20px" mt="32px">
+          <Text bold fontSize="20px" mt="32px" color="bbtColor">
             {t('Interface Settings')}
           </Text>
           <RowBetween>
@@ -85,7 +95,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
                 ml="4px"
               />
             </RowFixed>
-            <PancakeToggle
+            <Toggle
               id="toggle-expert-mode-button"
               checked={expertMode}
               onChange={
@@ -103,7 +113,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
               <Text fontSize="14px">{t('Disable Multihops')}</Text>
               <QuestionHelper text={t('Restricts swaps to direct pairs only.')} ml="4px" />
             </RowFixed>
-            <PancakeToggle
+            <Toggle
               id="toggle-disable-multihop-button"
               checked={singleHopOnly}
               onChange={() => {
@@ -116,7 +126,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
               <Text fontSize="14px">{t('Audio')}</Text>
               <QuestionHelper text={t('🐰 Turn down your volume a bit before you swap')} ml="4px" />
             </RowFixed>
-            <PancakeToggle checked={audioPlay} onChange={toggleSetAudioMode} />
+            <Toggle checked={audioPlay} onChange={toggleSetAudioMode} />
           </Flex>
         </AutoColumn>
       </ModalBody>

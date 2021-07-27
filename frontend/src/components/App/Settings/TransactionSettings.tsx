@@ -93,7 +93,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 setSlippageInput('')
                 setRawSlippage(10)
               }}
-              variant={rawSlippage === 10 ? 'primary' : 'tertiary'}
+              variant={rawSlippage === 10 ? 'bbtColor' : 'bbtTertiary'}
             >
               0.1%
             </Button>
@@ -102,7 +102,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 setSlippageInput('')
                 setRawSlippage(50)
               }}
-              variant={rawSlippage === 50 ? 'primary' : 'tertiary'}
+              variant={rawSlippage === 50 ? 'bbtColor' : 'bbtTertiary'}
             >
               0.5%
             </Button>
@@ -111,7 +111,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 setSlippageInput('')
                 setRawSlippage(100)
               }}
-              variant={rawSlippage === 100 ? 'primary' : 'tertiary'}
+              variant={rawSlippage === 100 ? 'bbtColor' : 'bbtTertiary'}
             >
               1%
             </Button>
@@ -128,7 +128,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
               isWarning={!slippageInputIsValid}
               isSuccess={![10, 50, 100].includes(rawSlippage)}
             />
-            <Text color="primary" bold ml="8px">
+            <Text color="bbtColor" bold ml="8px">
               %
             </Text>
           </RowBetween>

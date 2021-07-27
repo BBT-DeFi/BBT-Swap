@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const BubbleWrapper = styled(Flex)`
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: ${({ theme }) => theme.colors.bbtColor};
     transition: background-color 0.2s, opacity 0.2s;
   }
   &:hover {
@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <Wrapper>
       <Flex flexDirection={['column', 'column', 'row']} alignItems="center">
-        <ButtonMenu variant="subtle" scale="sm" activeIndex={0}>
+        <ButtonMenu variant="bbtColor" scale="sm" activeIndex={0}>
           <ButtonMenuItem>V2</ButtonMenuItem>
           <ButtonMenuItem as="a" href="https://v1exchange.pancakeswap.finance/#/">
             V1 (old)
@@ -64,7 +64,7 @@ const Footer = () => {
             as="a"
             external
             href="https://docs.pancakeswap.finance/products/pancakeswap-exchange"
-            variant="subtle"
+            variant="bbtColor"
           >
             Need help ?
           </Button>

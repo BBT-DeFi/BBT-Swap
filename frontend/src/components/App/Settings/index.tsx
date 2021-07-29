@@ -10,7 +10,7 @@ export default function SettingsTab() {
   return (
     <NotificationDot show={expertMode}>
       <Button variant="text" p={0} onClick={onPresentSettingsModal} id="open-settings-dialog-button">
-        <TuneIcon color="primary" width="24px" />
+        <TuneIcon color="bbtColor" width="24px" />
       </Button>
     </NotificationDot>
   )

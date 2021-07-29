@@ -29,7 +29,7 @@ const ApprovalAction: React.FC<ApprovalActionProps> = ({ pool, isLoading = false
           onClick={handleApprove}
           width="100%"
         >
-          {t('Enable')}
+          {t('Enasble')}
         </Button>
       )}
     </>

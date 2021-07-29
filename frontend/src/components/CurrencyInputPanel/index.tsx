@@ -33,8 +33,9 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   display: flex;
   flex-flow: column nowrap;
   position: relative;
+  border: 2px solid #02D767;
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.textSubtle};
   z-index: 1;
 `
 const Container = styled.div<{ hideInput: boolean }>`

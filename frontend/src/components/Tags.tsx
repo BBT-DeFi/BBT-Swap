@@ -11,7 +11,7 @@ import {
   VoteIcon,
 } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-
+// core tag
 const CoreTag: React.FC<TagProps> = (props) => {
   const { t } = useTranslation()
   return (

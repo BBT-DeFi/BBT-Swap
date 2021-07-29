@@ -26,6 +26,8 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
+    background-image: url('/images/logo_bbt.png'), url('/images/logo_bbt.png');
+    background-position: left center, right center;
     height: 165px;
     padding-top: 0;
   }
@@ -93,9 +95,9 @@ const Home: React.FC = () => {
       <Page>
         <Hero>
           <Heading as="h1" scale="xl" mb="24px" color="bbtColor">
-            {t('BBT Swap')}
+            {t('BBT-Swap')}
           </Heading>
-          <Text>{t('The #1 AMM and yield farm on Bitkub Chain.')}</Text>
+          <Text color="contrast">{t('The #1 AMM and yield farm on Bitkub Chain.')}</Text>
         </Hero>
         <div>
           <Cards>

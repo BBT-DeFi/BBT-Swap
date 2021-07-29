@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const BubbleWrapper = styled(Flex)`
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: ${({ theme }) => theme.colors.bbtColor};
     transition: background-color 0.2s, opacity 0.2s;
   }
   &:hover {

@@ -20,7 +20,7 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
       }
     case '/prediction':
       return {
-        title: `${t('Prediction')} | ${t('PancakeSwap')}`,
+        title: `${t('Prediction')} | ${t('BBTSwap')}`,
       }
     case '/farms':
       return {
@@ -28,11 +28,11 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
       }
     case '/pools':
       return {
-        title: `${t('Pools')} | ${t('PancakeSwap')}`,
+        title: `${t('Pools')} | ${t('BBTSwap')}`,
       }
     case '/lottery':
       return {
-        title: `${t('Lottery')} | ${t('PancakeSwap')}`,
+        title: `${t('Lottery')} | ${t('BBTSwap')}`,
       }
     case '/collectibles':
       return {

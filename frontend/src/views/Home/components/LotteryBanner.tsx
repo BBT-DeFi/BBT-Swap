@@ -17,7 +17,7 @@ const NowLive = styled(Text)`
 `
 
 const Wrapper = styled.div`
-  background-image: linear-gradient(#7645d9, #452a7a);
+  background-image: linear-gradient(180deg, rgba(2, 215, 103, 0.24) 0%, rgba(2, 215, 103, 0) 100%);
   max-height: max-content;
   overflow: hidden;
   ${({ theme }) => theme.mediaQueries.md} {
@@ -103,9 +103,9 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
     <Wrapper>
       <Inner>
         <LeftWrapper>
-          <NowLive>{t('Lottery Now Live')}</NowLive>
+          <NowLive>{t('Lottery 1 Now Live')}</NowLive>
           <PrizeFlex>
-            <Over fontSize="40px" color="#ffffff" bold mr="8px">
+            <Over fontSize="40px" color="textBitkub" bold mr="8px">
               {over}
             </Over>
             <>
@@ -114,10 +114,10 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
                   <Skeleton height={40} width={120} mb="10px" mt="10px" mr="8px" />
                 </>
               ) : (
-                <Balance fontSize="40px" color="#ffffff" bold prefix="$" mr="8px" decimals={0} value={prizeTotal} />
+                <Balance fontSize="40px" color="textBitkub" bold prefix="$" mr="8px" decimals={0} value={prizeTotal} />
               )}
             </>
-            <Text fontSize="40px" color="#ffffff" bold>
+            <Text fontSize="40px" color="textBitkub" bold>
               {inPrizes}
             </Text>
           </PrizeFlex>
@@ -131,7 +131,7 @@ const LotteryBanner: React.FC<{ currentLotteryPrize: string }> = ({ currentLotte
           </NavLink>
         </LeftWrapper>
         <RightWrapper>
-          <img src="/images/lottery/tombola.png" alt="lottery bunny" />
+          <img src="/images/bitkub.png" alt="lottery bunny" />
         </RightWrapper>
       </Inner>
     </Wrapper>

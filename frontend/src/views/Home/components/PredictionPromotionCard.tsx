@@ -117,12 +117,12 @@ const PredictionPromotionCard = () => {
   return (
     <StyledPredictionCard>
       <CardBody>
-        <PredictionLive mb="24px">{t('Predictions Now Live')}</PredictionLive>
-        <PredictionOver bold color="#7645d9">
+        <PredictionLive mb="24px" color="textBitkub">{t('Predictions Now Live')}</PredictionLive>
+        <PredictionOver bold color="textBitkub">
           {over}
         </PredictionOver>
         {bnbWonInUsd ? (
-          <PredictionWon mb="24px" color="#7645d9" bold prefix="$" decimals={0} value={bnbWonInUsd} />
+          <PredictionWon mb="24px" color="textBitkub" bold prefix="$" decimals={0} value={bnbWonInUsd} />
         ) : (
           <>
             <StyledSkeleton animation="pulse" variant="rect" mb="24px" width={180} />
@@ -132,7 +132,7 @@ const PredictionPromotionCard = () => {
         <PredictionBNBSoFar bold mb="24px">
           {bnbSoFar}
         </PredictionBNBSoFar>
-        <Text color="textSubtle" mb="24px">
+        <Text color="textBitkub" mb="24px">
           *{t('Beta Version')}
         </Text>
         <Link href="https://pancakeswap.finance/prediction" id="homepage-prediction-cta">

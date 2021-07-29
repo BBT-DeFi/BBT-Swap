@@ -24,8 +24,8 @@ const farms: FarmConfig[] = [
       56: '',
       25925 : '0x2D105fF34641dc54cf7D17df7161C6867DA3f68B'
     },
-    token: tokens.cake,
-    quoteToken: tokens.wbnb,
+    token: tokens.a,
+    quoteToken: tokens.b,
   },
   {
     pid: 252,
@@ -35,9 +35,9 @@ const farms: FarmConfig[] = [
       56: '',
       25925: '0x6Bc840CDbf504360Aa2dDbD02Bd70Fa7C95C084B'
     },
-    token: tokens.busd,
-    quoteToken: tokens.wbnb,
-  },
+    token: tokens.c,
+    quoteToken: tokens.d,
+  }
   /**
    * V3 by order of release (some may be out of PID order due to multiplier boost)
    */

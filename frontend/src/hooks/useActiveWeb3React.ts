@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react'
-import { ChainId } from '@pancakeswap/sdk'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 import { simpleRpcProvider } from 'utils/providers'

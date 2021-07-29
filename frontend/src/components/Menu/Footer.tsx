@@ -39,34 +39,12 @@ const Footer = () => {
       <Flex flexDirection={['column', 'column', 'row']} alignItems="center">
         <LinkExternal
           href="https://northbridge.link/"
-          ml={[0, 0, '40px']}
-          mt={['20px', '20px', 0]}
-          mb={['8px', '8px', 0]}
+          ml={[0, 0, '10px']}
+          mt={['10px', '10px', 0]}
+          mb={[0, 0, '22px']}
         >
           Convert to KAP-20
         </LinkExternal>
-      </Flex>
-      <Flex
-        flexGrow={1}
-        alignItems="center"
-        width={['100%', '100%', '100%', 'auto']}
-        justifyContent={['center', 'center', 'center', 'flex-end']}
-      >
-        <BubbleWrapper>
-          <Button
-            id="clickExchangeHelp"
-            as="a"
-            external
-            href="https://docs.pancakeswap.finance/products/pancakeswap-exchange"
-            variant="subtle"
-          >
-            Need help ?
-          </Button>
-          <Svg viewBox="0 0 16 16">
-            <path d="M0 16V0C0 0 3 1 6 1C9 1 16 -2 16 3.5C16 10.5 7.5 16 0 16Z" />
-          </Svg>
-        </BubbleWrapper>
-        <Image src="/images/help.svg" alt="Get some help" width={160} height={108} />
       </Flex>
     </Wrapper>
   )

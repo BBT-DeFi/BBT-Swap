@@ -32,7 +32,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'KUB' : '',
+          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'BNB' : '',
         }),
       )
     },
@@ -86,9 +86,9 @@ export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmo
 }
 
 const BAD_RECIPIENT_ADDRESSES: string[] = [
-  '0x384e8898B437953257265E65F32201cDF100ae5C', // replace with TESTNET factory
-  '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a', // v2 router 01
-  '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D', // v2 router 02
+  '0x384e8898B437953257265E65F32201cDF100ae5C', // replaced with TESTNET factory
+  '0x5c857afD739F478055977dF3B86d82D710f58197', // replaced with TESTNET router
+  '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D', // v2 pancake router 02
 ]
 
 /**

@@ -74,8 +74,7 @@ export const useBurnedBalance = (tokenAddress: string) => {
   useEffect(() => {
     const fetchBalance = async () => {
       const contract = getBep20Contract(tokenAddress)
-      const res = await contract.balanceOf('0x60bB6c1B4a0F5B1ea820be6c762384982b8a658c')
-      // const res = await contract.balanceOf('0x000000000000000000000000000000000000dEaD')
+      const res = await contract.balanceOf('0x000000000000000000000000000000000000dEaD')
       console.log(res.toString())
       setBalance(new BigNumber(res.toString()))
     }

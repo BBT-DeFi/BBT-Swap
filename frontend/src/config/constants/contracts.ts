@@ -17,13 +17,12 @@ export default {
   multiCall: {
     56: ' 0',
     97: '0x8F3273Fb89B075b1645095ABaC6ed17B2d4Bc576',
-    25925: '0x80E239569A212122aE0490A154D94A39Acdae421'
+    25925: '' // mai tong chai kor dai
   },
   pancakeProfile: {
     56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',
     97: '0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A',
     25925: '0x910431112d7822F08E980AC96d1a959AE8a38Aba'
-
   },
   pancakeRabbits: {
     56: '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07',

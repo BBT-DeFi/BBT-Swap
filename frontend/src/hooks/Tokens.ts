@@ -29,9 +29,6 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
     if (!chainId) return {}
 
     // reduce to just tokens
-    console.log(tokenMap)
-    console.log(chainId)
-    console.log(tokenMap[25925])
     const mapWithoutUrls = Object.keys(tokenMap[chainId]).reduce<{ [address: string]: Token }>((newMap, address) => {
       newMap[address] = tokenMap[chainId][address].token
       return newMap
@@ -65,7 +62,6 @@ export function useDefaultTokens(): { [address: string]: Token } {
 
 export function useAllTokens(): { [address: string]: Token } {
   const allTokens = useCombinedActiveList()
-  console.log(allTokens)
   return useTokensFromMap(allTokens, true)
 }
 

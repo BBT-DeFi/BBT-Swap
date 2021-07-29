@@ -57,6 +57,8 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
     },
   ]
 
+  console.log(calls)
+
   const [tokenBalanceLP, quoteTokenBalanceLP, lpTokenBalanceMC, lpTotalSupply, tokenDecimals, quoteTokenDecimals] =
     await multicall(erc20, calls)
 
@@ -93,6 +95,8 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
   const allocPoint = info ? new BigNumber(info.allocPoint?._hex) : BIG_ZERO
   const poolWeight = totalAllocPoint ? allocPoint.div(new BigNumber(totalAllocPoint)) : BIG_ZERO
 
+  console.log(poolWeight)
+  
   return {
     tokenAmountMc: tokenAmountMc.toJSON(),
     quoteTokenAmountMc: quoteTokenAmountMc.toJSON(),

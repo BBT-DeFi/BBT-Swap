@@ -11,14 +11,13 @@ const getActiveIndex = (pathname: string): number => {
   if (
     pathname.includes('/pool') ||
     pathname.includes('/create') ||
-    pathname.includes('/add') ||
     pathname.includes('/remove') ||
-    pathname.includes('/find') ||
-    pathname.includes('/liquidity')
+    pathname.includes('/swap') ||
+    pathname.includes('/find')
   ) {
-    return 1
+    return 0
   }
-  return 0
+  return 1
 }
 
 const Nav = () => {

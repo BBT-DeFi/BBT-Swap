@@ -3,7 +3,7 @@ import { Currency, ETHER, JSBI, TokenAmount } from '@pancakeswap/sdk'
 import { Button, ChevronDownIcon, Text, AddIcon, useModal } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
-import { LightCard } from '../../components/Card'
+import { BBTCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
 import { CurrencyLogo } from '../../components/Logo'
 import { MinimalPositionCard } from '../../components/PositionCard'
@@ -71,11 +71,11 @@ export default function PoolFinder() {
   )
 
   const prerequisiteMessage = (
-    <LightCard padding="45px 10px">
+    <BBTCard padding="45px 10px">
       <Text textAlign="center">
         {!account ? t('Connect to a wallet to find pools') : t('Select a token to find your liquidity.')}
       </Text>
-    </LightCard>
+    </BBTCard>
   )
 
   const [onPresentCurrencyModal] = useModal(
@@ -148,41 +148,41 @@ export default function PoolFinder() {
               hasPosition && pair ? (
                 <MinimalPositionCard pair={pair} />
               ) : (
-                <LightCard padding="45px 10px">
+                <BBTCard padding="45px 10px">
                   <AutoColumn gap="sm" justify="center">
                     <Text textAlign="center">{t('You don’t have liquidity in this pool yet.')}</Text>
                     <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                       <Text textAlign="center">{t('Add Liquidity')}</Text>
                     </StyledInternalLink>
                   </AutoColumn>
-                </LightCard>
+                </BBTCard>
               )
             ) : validPairNoLiquidity ? (
-              <LightCard padding="45px 10px">
+              <BBTCard padding="45px 10px">
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">{t('No pool found.')}</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                     {t('Create pool.')}
                   </StyledInternalLink>
                 </AutoColumn>
-              </LightCard>
+              </BBTCard>
             ) : pairState === PairState.INVALID ? (
-              <LightCard padding="45px 10px">
+              <BBTCard padding="45px 10px">
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center" fontWeight={500}>
                     {t('Invalid pair.')}
                   </Text>
                 </AutoColumn>
-              </LightCard>
+              </BBTCard>
             ) : pairState === PairState.LOADING ? (
-              <LightCard padding="45px 10px">
+              <BBTCard padding="45px 10px">
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">
                     {t('Loading')}
                     <Dots />
                   </Text>
                 </AutoColumn>
-              </LightCard>
+              </BBTCard>
             ) : null
           ) : (
             prerequisiteMessage

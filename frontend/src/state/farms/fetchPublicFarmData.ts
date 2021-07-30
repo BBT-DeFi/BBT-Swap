@@ -57,7 +57,7 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
     },
   ]
 
-  console.log(calls)
+  console.log({calls})
 
   const [tokenBalanceLP, quoteTokenBalanceLP, lpTokenBalanceMC, lpTotalSupply, tokenDecimals, quoteTokenDecimals] =
     await multicall(erc20, calls)

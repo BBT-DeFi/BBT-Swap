@@ -1,5 +1,5 @@
-const BBT_OFFICIAL = 'https://aimploychanok.github.io/api/bbt-official.json'
-const BBT_SAMPLE = 'https://aimploychanok.github.io/api/bbt-sample.json'
+const BBT_OFFICIAL = 'https://thanakiat-gusgus.github.io/bbt-api/bbt-official.json'
+const BBT_SAMPLE = 'https://thanakiat-gusgus.github.io/bbt-api/bbt-sample.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = []
 

@@ -13,8 +13,8 @@ const farms: FarmConfig[] = [
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
       25925: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
     },
-    token: tokens.syrup,
-    quoteToken: tokens.wbnb,
+    token: tokens.a,
+    quoteToken: tokens.b,
   },
   {
     pid: 251,

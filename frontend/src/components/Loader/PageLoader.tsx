@@ -12,7 +12,7 @@ const Wrapper = styled(Page)`
 const PageLoader: React.FC = () => {
   return (
     <Wrapper>
-      <img src="/images/kubcoin.png" alt="kub loader" /> {/* change spinner */}
+      <Spinner /> {/* change spinner */}
     </Wrapper>
   )
 }

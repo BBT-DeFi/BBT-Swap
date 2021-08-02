@@ -8,7 +8,7 @@ import { SUGGESTED_BASES } from '../../config/constants'
 import { AutoColumn } from '../Layout/Column'
 import QuestionHelper from '../QuestionHelper'
 import { AutoRow } from '../Layout/Row'
-import { CurrencyLogo } from '../Logo'
+// import { CurrencyLogo } from '../Logo'
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
   border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};

@@ -43,7 +43,7 @@ import Page from '../Page'
 const Label = styled(Text)`
   font-size: 12px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.bitkub};
 `
 
 export default function Swap({ history }: RouteComponentProps) {
@@ -340,7 +340,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && (
                   <RowBetween align="center">
                     <Label>{t('Slippage Tolerance')}</Label>
-                    <Text bold color="primary">
+                    <Text bold color="text">
                       {allowedSlippage / 100}%
                     </Text>
                   </RowBetween>

@@ -1,5 +1,4 @@
 import { Currency, ETHER, Token } from '@pancakeswap/sdk'
-import { BinanceIcon } from '@pancakeswap/uikit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import useHttpLocations from '../../hooks/useHttpLocations'
@@ -36,8 +35,8 @@ export default function CurrencyLogo({
   }, [currency, uriLocations])
 
   if (currency === ETHER) {
-    return <BinanceIcon width={size} style={style} />
-  }
+    // Logo default currency
+    return <img src="https://bitkubcoin.com/wp-content/uploads/2021/05/Bitkub-Coin.png" alt="kub" width={size} style={style} />  }
 
   return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
 }

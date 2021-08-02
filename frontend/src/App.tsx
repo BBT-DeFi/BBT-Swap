@@ -28,7 +28,7 @@ import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 const FarmAuction = lazy(() => import('./views/FarmAuction'))
-// const Lottery = lazy(() => import('./views/Lottery'))
+const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
 const Collectibles = lazy(() => import('./views/Collectibles'))
@@ -76,10 +76,10 @@ const App: React.FC = () => {
             <Route path="/pools">
               <Pools />
             </Route>
-            {/* <Route path="/lottery">
+            <Route path="/lottery">
               <Lottery />
-            </Route> */}
-            <Route path="/ifo">
+            </Route>
+            {/* <Route path="/ifo">
               <Ifos />
             </Route>
             <Route path="/collectibles">
@@ -94,12 +94,12 @@ const App: React.FC = () => {
             <Route path="/profile">
               <Profile />
             </Route>
-            <Route path="/competition">
+            {/* <Route path="/competition">
               <TradingCompetition />
             </Route>
             <Route path="/prediction">
               <Predictions />
-            </Route>
+            </Route> */}
             <Route exact path="/voting">
               <Voting />
             </Route>
@@ -136,9 +136,9 @@ const App: React.FC = () => {
             <Route path="/syrup">
               <Redirect to="/pools" />
             </Route>
-            <Route path="/nft">
+            {/* <Route path="/nft">
               <Redirect to="/collectibles" />
-            </Route>
+            </Route> */}
 
             {/* 404 */}
             <Route component={NotFound} />

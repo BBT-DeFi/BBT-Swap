@@ -1,6 +1,7 @@
 import { Currency, ETHER, Token } from '@pancakeswap/sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
+import {KubIcon} from '@pancakeswap/uikit'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import getTokenLogoURL from '../../utils/getTokenLogoURL'
@@ -36,7 +37,8 @@ export default function CurrencyLogo({
 
   if (currency === ETHER) {
     // Logo default currency
-    return <img src="https://bitkubcoin.com/wp-content/uploads/2021/05/Bitkub-Coin.png" alt="kub" width={size} style={style} />  }
+    return <KubIcon width={size} style={style} /> 
+  }
 
   return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
 }

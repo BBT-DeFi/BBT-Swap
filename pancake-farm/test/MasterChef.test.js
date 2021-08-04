@@ -1,0 +1,191 @@
+const { expectRevert, time } = require('@openzeppelin/test-helpers');
+const CakeToken = artifacts.require('CakeToken');
+const SyrupBar = artifacts.require('SyrupBar');
+const MasterChef = artifacts.require('MasterChef');
+const MockBEP20 = artifacts.require('libs/MockBEP20');
+
+contract('MasterChef', ([alice, bob, carol, dev, minter]) => {
+    beforeEach(async () => {
+        this.cake = await CakeToken.new({ from: minter });
+        this.syrup = await SyrupBar.new(this.cake.address, { from: minter });
+        this.lp1 = await MockBEP20.new('LPToken', 'LP1', '1000000', { from: minter });
+        this.lp2 = await MockBEP20.new('LPToken', 'LP2', '1000000', { from: minter });
+        this.lp3 = await MockBEP20.new('LPToken', 'LP3', '1000000', { from: minter });
+        this.chef = await MasterChef.new(this.cake.address, this.syrup.address, dev, '1000', '100', { from: minter });
+        await this.cake.transferOwnership(this.chef.address, { from: minter });
+        await this.syrup.transferOwnership(this.chef.address, { from: minter });
+
+        await this.lp1.transfer(bob, '2000', { from: minter });
+        await this.lp2.transfer(bob, '2000', { from: minter });
+        await this.lp3.transfer(bob, '2000', { from: minter });
+
+        await this.lp1.transfer(alice, '2000', { from: minter });
+        await this.lp2.transfer(alice, '2000', { from: minter });
+        await this.lp3.transfer(alice, '2000', { from: minter });
+    });
+    it('real case', async () => {
+      this.lp4 = await MockBEP20.new('LPToken', 'LP1', '1000000', { from: minter });
+      this.lp5 = await MockBEP20.new('LPToken', 'LP2', '1000000', { from: minter });
+      this.lp6 = await MockBEP20.new('LPToken', 'LP3', '1000000', { from: minter });
+      this.lp7 = await MockBEP20.new('LPToken', 'LP1', '1000000', { from: minter });
+      this.lp8 = await MockBEP20.new('LPToken', 'LP2', '1000000', { from: minter });
+      this.lp9 = await MockBEP20.new('LPToken', 'LP3', '1000000', { from: minter });
+      await this.chef.add('2000', this.lp1.address, true, { from: minter });
+      console.log("totalAllocPoint = ",(await this.chef.totalAllocPoint).toString());
+      console.log("cake reward in syrup = ",(await this.cake.balanceOf(this.syrup.address)).toString());
+      // await this.chef.add('1000', this.lp2.address, true, { from: minter });
+      // await this.chef.add('500', this.lp3.address, true, { from: minter });
+      // await this.chef.add('500', this.lp3.address, true, { from: minter });
+      // await this.chef.add('500', this.lp3.address, true, { from: minter });
+      // await this.chef.add('500', this.lp3.address, true, { from: minter });
+      // await this.chef.add('500', this.lp3.address, true, { from: minter });
+      // await this.chef.add('100', this.lp3.address, true, { from: minter });
+      // await this.chef.add('100', this.lp3.address, true, { from: minter });
+      // assert.equal((await this.chef.poolLength()).toString(), "10");
+
+      await time.advanceBlockTo('170'); //if comment this out, reward will not be calculated according to the if (block.number <= pool.lastRewardBlock){return;}
+      await this.lp1.approve(this.chef.address, '1000', { from: alice });
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '0');
+      await this.chef.deposit(1, '20', { from: alice });
+      console.log("LP1 balance of Alice after deposit to chef",(await this.lp1.balanceOf(alice)).toString());
+      console.log("cake balance of Alice after deposit to chef",(await this.cake.balanceOf(alice)).toString());
+      console.log("cake reward in syrup = ",(await this.cake.balanceOf(this.syrup.address)).toString());
+      console.log("syrup balance of Alice after deposit to chef",(await this.syrup.balanceOf(alice)).toString());
+      console.log("syrup balance of syrup contract after alice deposit to chef",(await this.syrup.balanceOf(this.syrup.address)).toString());
+      //try to withdraw 0
+      /*await this.chef.withdraw(1, '0', { from: alice }); this equals toawait this.chef.deposit(1, '0', { from: alice });*/
+      //console.log("Alice's cake balance after withdraw 0= ",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.withdraw(1, '20', { from: alice }); 
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '263');
+      //console.log("balance of Alice after withdraw",(await this.lp1.balanceOf(alice)).toString());
+      console.log("cake reward in syrup after withdraw = ",(await this.cake.balanceOf(this.syrup.address)).toString());
+      await this.cake.approve(this.chef.address, '1000', { from: alice });
+      console.log("alice's cake balance after withdraw and before staking = ",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.enterStaking('20', { from: alice });
+      console.log("alice's cake balance after staking = ",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.enterStaking('0', { from: alice });
+      console.log("alice's cake balance after staking 0 = ",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.enterStaking('0', { from: alice });
+      console.log("alice's cake balance after staking 0 2nd = ",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.enterStaking('0', { from: alice });
+      console.log("alice's cake balance after staking 0 3rd = ",(await this.cake.balanceOf(alice)).toString());
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '993');
+      await this.chef.leaveStaking('0', { from: alice });
+      console.log("alice's cake balance after leaveStaking 0 1st = ",(await this.cake.balanceOf(alice)).toString());
+      // assert.equal((await this.chef.getPoolPoint(0, { from: minter })).toString(), '1900');
+    })
+
+
+    it('deposit/withdraw', async () => {
+      await this.chef.add('1000', this.lp1.address, true, { from: minter });
+      await this.chef.add('1000', this.lp2.address, true, { from: minter });
+      await this.chef.add('1000', this.lp3.address, true, { from: minter });
+
+      //alice's part
+      console.log("balance of Alice before deposit",(await this.cake.balanceOf(alice)).toString());
+      await this.lp1.approve(this.chef.address, '100', { from: alice });
+      await this.chef.deposit(1, '20', { from: alice });
+      await this.chef.deposit(1, '0', { from: alice });
+      await this.chef.deposit(1, '40', { from: alice });
+      await this.chef.deposit(1, '0', { from: alice });
+      assert.equal((await this.lp1.balanceOf(alice)).toString(), '1940');
+      console.log("balance of Alice after deposit",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.withdraw(1, '10', { from: alice });
+      console.log("balance of Alice after withdraw",(await this.cake.balanceOf(alice)).toString());
+      assert.equal((await this.lp1.balanceOf(alice)).toString(), '1950');
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '999');
+      assert.equal((await this.cake.balanceOf(dev)).toString(), '100');
+
+      // bob's part
+      await this.lp1.approve(this.chef.address, '100', { from: bob });
+      assert.equal((await this.lp1.balanceOf(bob)).toString(), '2000');
+      await this.chef.deposit(1, '50', { from: bob });
+      assert.equal((await this.lp1.balanceOf(bob)).toString(), '1950');
+      await this.chef.deposit(1, '0', { from: bob });
+      assert.equal((await this.cake.balanceOf(bob)).toString(), '125');
+      await this.chef.emergencyWithdraw(1, { from: bob });
+      assert.equal((await this.lp1.balanceOf(bob)).toString(), '2000');
+    })
+
+    it('staking/unstaking', async () => {
+      await this.chef.add('1000', this.lp1.address, true, { from: minter });
+      await this.chef.add('1000', this.lp2.address, true, { from: minter });
+      await this.chef.add('1000', this.lp3.address, true, { from: minter });
+
+      await this.lp1.approve(this.chef.address, '10', { from: alice });
+      console.log("balance of Alice before deposit",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.deposit(1, '2', { from: alice }); //0
+      console.log("balance of Alice after deposit",(await this.cake.balanceOf(alice)).toString());
+      await this.chef.withdraw(1, '2', { from: alice }); //1
+      console.log("balance of Alice after withdraw",(await this.cake.balanceOf(alice)).toString());
+
+      await this.cake.approve(this.chef.address, '250', { from: alice });
+      await this.chef.enterStaking('240', { from: alice }); //3
+      assert.equal((await this.syrup.balanceOf(alice)).toString(), '240');
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '10');
+      await this.chef.enterStaking('10', { from: alice }); //4
+      assert.equal((await this.syrup.balanceOf(alice)).toString(), '250');
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '249');
+      await this.chef.leaveStaking(250);
+      assert.equal((await this.syrup.balanceOf(alice)).toString(), '0');
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '749');
+
+    });
+
+
+    it('updaate multiplier', async () => {
+      await this.chef.add('1000', this.lp1.address, true, { from: minter });
+      await this.chef.add('1000', this.lp2.address, true, { from: minter });
+      await this.chef.add('1000', this.lp3.address, true, { from: minter });
+
+      await this.lp1.approve(this.chef.address, '100', { from: alice });
+      await this.lp1.approve(this.chef.address, '100', { from: bob });
+      await this.chef.deposit(1, '100', { from: alice });
+      await this.chef.deposit(1, '100', { from: bob });
+      await this.chef.deposit(1, '0', { from: alice });
+      await this.chef.deposit(1, '0', { from: bob });
+
+      await this.cake.approve(this.chef.address, '100', { from: alice });
+      await this.cake.approve(this.chef.address, '100', { from: bob });
+      await this.chef.enterStaking('50', { from: alice });
+      await this.chef.enterStaking('100', { from: bob });
+
+      await this.chef.updateMultiplier('0', { from: minter });
+
+      await this.chef.enterStaking('0', { from: alice });
+      await this.chef.enterStaking('0', { from: bob });
+      await this.chef.deposit(1, '0', { from: alice });
+      await this.chef.deposit(1, '0', { from: bob });
+
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '700');
+      assert.equal((await this.cake.balanceOf(bob)).toString(), '150');
+
+      await time.advanceBlockTo('265');
+
+      await this.chef.enterStaking('0', { from: alice });
+      await this.chef.enterStaking('0', { from: bob });
+      await this.chef.deposit(1, '0', { from: alice });
+      await this.chef.deposit(1, '0', { from: bob });
+
+      assert.equal((await this.cake.balanceOf(alice)).toString(), '700');
+      assert.equal((await this.cake.balanceOf(bob)).toString(), '150');
+
+      await this.chef.leaveStaking('50', { from: alice });
+      await this.chef.leaveStaking('100', { from: bob });
+      await this.chef.withdraw(1, '100', { from: alice });
+      await this.chef.withdraw(1, '100', { from: bob });
+
+    });
+
+    it('should allow dev and only dev to update dev', async () => {
+        assert.equal((await this.chef.devaddr()).valueOf(), dev);
+        await expectRevert(this.chef.dev(bob, { from: bob }), 'dev: wut?');
+        //console.log(await this.chef.dev(bob, { from: dev }));
+        console.log(await this.chef.dev(bob, { from: bob })); //new 
+        assert.equal((await this.chef.devaddr()).valueOf(), bob);
+        await this.chef.dev(alice, { from: bob });
+        assert.equal((await this.chef.devaddr()).valueOf(), alice);
+        // let a = await this.chef.dev(bob, { from: bob })
+        // console.log(await this.chef.dev(bob, { from: dev }));
+    })
+});

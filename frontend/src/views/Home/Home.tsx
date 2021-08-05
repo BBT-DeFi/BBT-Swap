@@ -98,7 +98,7 @@ const Home: React.FC = () => {
           <Heading as="h1" scale="xl" mb="24px" color="textBitkub">
             {t('BBT-Swap')}
           </Heading>
-          <Text color="textBitkub">{t('The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
+          <Text color="textBitkub">{t('The #1 AMM and yield farm on Bitkub Smart Chain.')}</Text>
         </Hero>
         <div>
           <Cards>

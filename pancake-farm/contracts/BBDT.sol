@@ -1,8 +1,12 @@
 pragma solidity 0.6.12;
+//import "./SafeMath.sol";
+import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/SafeBEP20.sol';
+import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
+import "@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol";
 interface IAdminAsset {
     function isSuperAdmin(address _addr, string calldata _token) external view returns (bool);
 }
-interface IKYC {
+interface IKYC { 
     function kycsLevel(address _addr) external view returns (uint256);
 }
 interface IKAP20 {
@@ -23,7 +27,8 @@ interface IKAP20 {
     function adminTransfer(address _from, address _to, uint256 _value) external returns (bool success);
 }
 // BBT DeFi Test with Governance.
-contract BBDT is IKAP20 {
+contract BBDT is IKAP20, Ownable {
+    using SafeMath for uint256;
     string public name     = "BBT DeFi Test";
     string public symbol   = "BBDT";
     uint8  public decimals = 18;
@@ -203,44 +208,36 @@ contract BBDT is IKAP20 {
     function revokeBlacklist(address _addr) external onlySuperAdmin {
         blacklist[_addr] = false;
     }
-    //fork part(PancakeSwap)
-    /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
-    function mint(address _to, uint256 _amount) public onlySuperAdmin {
-        _mint(_to, _amount);
-        _moveDelegates(address(0), _delegates[_to], _amount);
+   
+   //this is for admin  to mint 
+    function _mint(address _toAddr, uint256 _amount) external onlySuperAdmin returns (bool) {
+        balances[_toAddr] += _amount;
+        _totalSupply += _amount;
+        emit Transfer(address(0), _toAddr, _amount);
+        return true;
     }
     
-    /** @dev Creates `amount` tokens and assigns them to `account`, increasing
-     * the total supply.
-     *
-     * Emits a {Transfer} event with `from` set to the zero address.
-     *
-     * Requirements
-     *
-     * - `to` cannot be the zero address.
-     */
-    function _mint(address account, uint256 amount) internal {
-        require(account != address(0), 'BEP20: mint to the zero address');
-        _totalSupply = _totalSupply.add(amount);
-        _balances[account] = _balances[account].add(amount);
-        emit Transfer(address(0), account, amount);
+    //this is for admin  to burn
+    function _burn(address _fromAddr, uint256 _amount) external onlySuperAdmin returns (bool) {
+        require(balances[_fromAddr] >= _amount);
+        balances[_fromAddr] -= _amount;
+        emit Transfer(_fromAddr, address(0), _amount);
+        return true;
     }
-    /**
-     * @dev Destroys `amount` tokens from `account`, reducing the
-     * total supply.
-     *
-     * Emits a {Transfer} event with `to` set to the zero address.
-     *
-     * Requirements
-     *
-     * - `account` cannot be the zero address.
-     * - `account` must have at least `amount` tokens.
-     */
-    function _burn(address account, uint256 amount) internal {
-        require(account != address(0), 'BEP20: burn from the zero address');
-        _balances[account] = _balances[account].sub(amount, 'BEP20: burn amount exceeds balance');
-        _totalSupply = _totalSupply.sub(amount);
-        emit Transfer(account, address(0), amount);
+    
+    //this is for masterchef to mint 
+    function mint(address _to, uint256 _amount) public onlyOwner {
+        mint_(_to, _amount);
+        //_moveDelegates(address(0), _delegates[_to], _amount); //don't use the voting yet
+    }
+    
+    //this is exactly the same as BEP20 _mint function
+    function mint_(address account, uint256 amount) internal {
+        require(account != address(0), 'KAP20: mint to the zero address');
+
+        _totalSupply = _totalSupply.add(amount);
+        balances[account] = balances[account].add(amount);
+        emit Transfer(address(0), account, amount);
     }
     
     // Copied and modified from YAM code:
@@ -309,7 +306,7 @@ contract BBDT is IKAP20 {
         bytes32 domainSeparator = keccak256(
             abi.encode(
                 DOMAIN_TYPEHASH,
-                keccak256(bytes(name())),
+                keccak256(bytes(name)),
                 getChainId(),
                 address(this)
             )

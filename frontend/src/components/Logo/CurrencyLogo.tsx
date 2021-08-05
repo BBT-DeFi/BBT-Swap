@@ -1,7 +1,7 @@
 import { Currency, ETHER, Token } from '@pancakeswap/sdk'
-import { BinanceIcon } from '@pancakeswap/uikit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
+import {KubIcon} from '@pancakeswap/uikit'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import getTokenLogoURL from '../../utils/getTokenLogoURL'
@@ -36,7 +36,8 @@ export default function CurrencyLogo({
   }, [currency, uriLocations])
 
   if (currency === ETHER) {
-    return <BinanceIcon width={size} style={style} />
+    // Logo default currency
+    return <KubIcon width={size} style={style} /> 
   }
 
   return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />

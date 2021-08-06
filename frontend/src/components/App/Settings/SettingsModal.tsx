@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
   Button,
   Text,
-  PancakeToggle,
+  // PancakeToggle,
   Flex,
   Message,
   Modal,

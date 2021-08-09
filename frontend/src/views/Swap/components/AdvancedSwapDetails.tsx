@@ -1,6 +1,6 @@
 import React from 'react'
 import { Trade, TradeType } from '@pancakeswap/sdk'
-import { Text } from '@pancakeswap/uikit'
+import { Text } from '@bbt-swap/uikit'
 import { Field } from 'state/swap/actions'
 import { useUserSlippageTolerance } from 'state/user/hooks'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown } from 'utils/prices'
@@ -31,7 +31,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
           <Text fontSize="14px">
             {isExactIn
               ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)} ${trade.outputAmount.currency.symbol}` ??
-                '-'
+              '-'
               : `${slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)} ${trade.inputAmount.currency.symbol}` ?? '-'}
           </Text>
         </RowFixed>

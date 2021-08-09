@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { ChevronDownIcon, useMatchBreakpoints } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 interface DetailsProps {
@@ -19,7 +19,7 @@ const Container = styled.div`
   }
 `
 
-const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
+const ArrowIcon = styled(ChevronDownIcon) <{ toggled: boolean }>`
   transform: ${({ toggled }) => (toggled ? 'rotate(180deg)' : 'rotate(0)')};
   height: 20px;
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Heading, Text, Link, useTooltip } from '@pancakeswap/uikit'
+import { Flex, Heading, Text, Link, useTooltip } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { ContextApi } from 'contexts/Localization/types'
 import { getBscScanLink } from 'utils'
@@ -17,7 +17,7 @@ export interface TimerProps {
   BodyTextComponent?: React.ElementType
 }
 
-const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
+const StyledTimerFlex = styled(Flex) <{ showTooltip?: boolean }>`
   ${({ theme, showTooltip }) => (showTooltip ? ` border-bottom: 1px dashed ${theme.colors.textSubtle};` : ``)}
   div:last-of-type {
     margin-right: 0;

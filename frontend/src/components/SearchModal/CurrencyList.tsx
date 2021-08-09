@@ -1,6 +1,6 @@
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@pancakeswap/sdk'
-import { Text } from '@pancakeswap/uikit'
+import { Text } from '@bbt-swap/uikit'
 import styled from 'styled-components'
 import { FixedSizeList } from 'react-window'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
@@ -41,7 +41,7 @@ function Balance({ balance }: { balance: CurrencyAmount }) {
   return <StyledBalanceText title={balance.toExact()}>{balance.toSignificant(4)}</StyledBalanceText>
 }
 
-const MenuItem = styled(RowBetween)<{ disabled: boolean; selected: boolean }>`
+const MenuItem = styled(RowBetween) <{ disabled: boolean; selected: boolean }>`
   padding: 4px 20px;
   height: 56px;
   display: grid;

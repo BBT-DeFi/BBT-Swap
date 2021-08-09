@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardBody, Heading, Flex, Skeleton, Text, Box, Button, useModal } from '@pancakeswap/uikit'
+import { CardBody, Heading, Flex, Skeleton, Text, Box, Button, useModal } from '@bbt-swap/uikit'
 import { LotteryRound } from 'state/types'
 import { useGetUserLotteriesGraphData } from 'state/hooks'
 import { useTranslation } from 'contexts/Localization'

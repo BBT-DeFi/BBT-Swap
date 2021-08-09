@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Box, Image } from '@pancakeswap/uikit'
+import { Flex, Box, Image } from '@bbt-swap/uikit'
 import { TeamRanksProps } from '../../types'
 import CakerBunny from '../../pngs/cakers.png'
 import TopTradersCard from './TopTradersCard'
@@ -53,8 +53,8 @@ const TeamRanks: React.FC<TeamRanksProps> = ({
 }) => {
   const isTeamLeaderboardDataComplete = Boolean(
     team1LeaderboardInformation.leaderboardData &&
-      team2LeaderboardInformation.leaderboardData &&
-      team3LeaderboardInformation.leaderboardData,
+    team2LeaderboardInformation.leaderboardData &&
+    team3LeaderboardInformation.leaderboardData,
   )
 
   const isGlobalLeaderboardDataComplete = Boolean(isTeamLeaderboardDataComplete && globalLeaderboardInformation)

@@ -1,6 +1,6 @@
 import React from 'react'
 import { orderBy } from 'lodash'
-import { Box, Heading, Text } from '@pancakeswap/uikit'
+import { Box, Heading, Text } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { Bet } from 'state/types'
 import HistoricalBet from './HistoricalBet'

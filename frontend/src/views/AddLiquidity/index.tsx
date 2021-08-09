@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap/sdk'
-import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from '@pancakeswap/uikit'
+import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from '@bbt-swap/uikit'
 import { RouteComponentProps } from 'react-router-dom'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import { useTranslation } from 'contexts/Localization'
@@ -51,8 +51,8 @@ export default function AddLiquidity({
 
   const oneCurrencyIsWETH = Boolean(
     chainId &&
-      ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
-        (currencyB && currencyEquals(currencyB, WETH[chainId]))),
+    ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
+      (currencyB && currencyEquals(currencyB, WETH[chainId]))),
   )
 
   const expertMode = useIsExpertMode()
@@ -175,9 +175,8 @@ export default function AddLiquidity({
           setAttemptingTxn(false)
 
           addTransaction(response, {
-            summary: `Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${
-              currencies[Field.CURRENCY_A]?.symbol
-            } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
+            summary: `Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${currencies[Field.CURRENCY_A]?.symbol
+              } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
           })
 
           setTxHash(response.hash)

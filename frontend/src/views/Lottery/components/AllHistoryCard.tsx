@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Text, CardFooter, Flex, Heading } from '@pancakeswap/uikit'
+import { Card, CardBody, Text, CardFooter, Flex, Heading } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { WhiteBunny } from '../svgs'
 

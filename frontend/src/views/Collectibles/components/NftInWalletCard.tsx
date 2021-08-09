@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from '@pancakeswap/uikit'
+import { Card, CardBody, Heading, Text } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import CardContent from './CardContent'
 

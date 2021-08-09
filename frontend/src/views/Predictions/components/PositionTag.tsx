@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { ArrowUpIcon, ArrowDownIcon, Flex, FlexProps, Text } from '@pancakeswap/uikit'
+import { ArrowUpIcon, ArrowDownIcon, Flex, FlexProps, Text } from '@bbt-swap/uikit'
 import { BetPosition } from 'state/types'
 
 interface TagProps extends FlexProps {
@@ -8,7 +8,7 @@ interface TagProps extends FlexProps {
   startIcon?: ReactNode
 }
 
-const StyledTag = styled(Flex)<{ bg: TagProps['bg'] }>`
+const StyledTag = styled(Flex) <{ bg: TagProps['bg'] }>`
   background-color: ${({ bg, theme }) => theme.colors[bg]};
   display: inline-flex;
 `

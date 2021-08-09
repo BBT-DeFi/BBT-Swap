@@ -10,7 +10,7 @@ import {
   Progress,
   Button,
   ChevronUpIcon,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
 import { Ifo, IfoStatus, PoolIds } from 'config/constants/types'
@@ -57,7 +57,7 @@ const StyledCard = styled(Card)`
   margin: auto;
 `
 
-const Header = styled(CardHeader)<{ ifoId: string }>`
+const Header = styled(CardHeader) <{ ifoId: string }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;

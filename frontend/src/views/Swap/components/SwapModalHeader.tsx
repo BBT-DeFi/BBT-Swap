@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Trade, TradeType } from '@pancakeswap/sdk'
-import { Button, Text, ErrorIcon, ArrowDownIcon } from '@pancakeswap/uikit'
+import { Button, Text, ErrorIcon, ArrowDownIcon } from '@bbt-swap/uikit'
 import { Field } from 'state/swap/actions'
 import { isAddress, shortenAddress } from 'utils'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
@@ -59,8 +59,8 @@ export default function SwapModalHeader({
               priceImpactSeverity > 2
                 ? 'failure'
                 : showAcceptChanges && trade.tradeType === TradeType.EXACT_INPUT
-                ? 'primary'
-                : 'text'
+                  ? 'primary'
+                  : 'text'
             }
           >
             {trade.outputAmount.toSignificant(6)}

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BoxProps, Box, Flex, FlexProps } from '@pancakeswap/uikit'
+import { BoxProps, Box, Flex, FlexProps } from '@bbt-swap/uikit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ConcaveProps } from './svg/CurvedSvg'
@@ -20,7 +20,7 @@ interface BackgroundColorProps extends FlexProps {
   background?: string
 }
 
-const BackgroundColor = styled(Flex)<BackgroundColorProps>`
+const BackgroundColor = styled(Flex) <BackgroundColorProps>`
   position: relative;
   flex-direction: column;
   align-items: center;

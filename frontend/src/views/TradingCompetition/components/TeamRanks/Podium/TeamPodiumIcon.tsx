@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Image, Skeleton } from '@pancakeswap/uikit'
+import { Flex, Image, Skeleton } from '@bbt-swap/uikit'
 import Sticker from '../../Sticker'
 
-const Wrapper = styled(Flex)<{ imageSize?: number }>`
+const Wrapper = styled(Flex) <{ imageSize?: number }>`
   align-items: center;
   justify-content: center;
 

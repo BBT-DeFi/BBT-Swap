@@ -12,7 +12,7 @@ import {
   Text,
   TimerIcon,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import { BASE_BSC_SCAN_URL } from 'config'
 import { getBscScanLink } from 'utils'
 import { useBlock, useCakeVault } from 'state/hooks'

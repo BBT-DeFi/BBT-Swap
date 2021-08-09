@@ -12,7 +12,7 @@ import {
   Heading,
   Skeleton,
   Box,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryStatus } from 'config/constants/types'
 import { useGetUserLotteriesGraphData, useLottery } from 'state/hooks'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Heading } from '@pancakeswap/uikit'
+import { Flex, Heading } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 export interface TimerProps {
@@ -9,7 +9,7 @@ export interface TimerProps {
   days?: number
 }
 
-const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
+const StyledTimerFlex = styled(Flex) <{ showTooltip?: boolean }>`
   ${({ theme, showTooltip }) => (showTooltip ? ` border-bottom: 1px dashed ${theme.colors.textSubtle};` : ``)}
   div:last-of-type {
     margin-right: 0;

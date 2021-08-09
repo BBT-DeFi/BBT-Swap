@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, ErrorIcon } from '@pancakeswap/uikit'
+import { Text, ErrorIcon } from '@bbt-swap/uikit'
 import styled, { css } from 'styled-components'
 import { AutoColumn } from 'components/Layout/Column'
 
@@ -22,15 +22,15 @@ export const ArrowWrapper = styled.div<{ clickable: boolean }>`
       : null}
 `
 
-export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
+export const ErrorText = styled(Text) <{ severity?: 0 | 1 | 2 | 3 | 4 }>`
   color: ${({ theme, severity }) =>
     severity === 3 || severity === 4
       ? theme.colors.failure
       : severity === 2
-      ? theme.colors.warning
-      : severity === 1
-      ? theme.colors.text
-      : theme.colors.success};
+        ? theme.colors.warning
+        : severity === 1
+          ? theme.colors.text
+          : theme.colors.success};
 `
 
 export const StyledBalanceMaxMini = styled.button`

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, Button, Input, Flex, Grid } from '@pancakeswap/uikit'
+import { Text, Button, Input, Flex, Grid } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import QuestionHelper from '../../QuestionHelper'
 import { AutoColumn } from '../../Layout/Column'
@@ -144,8 +144,8 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             {slippageError === SlippageError.InvalidInput
               ? t('Enter a valid slippage percentage')
               : slippageError === SlippageError.RiskyLow
-              ? t('Your transaction may fail')
-              : t('Your transaction may be frontrun')}
+                ? t('Your transaction may fail')
+                : t('Your transaction may be frontrun')}
           </RowBetween>
         )}
       </AutoColumn>

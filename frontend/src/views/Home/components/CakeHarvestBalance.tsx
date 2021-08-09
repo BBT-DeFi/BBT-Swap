@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@pancakeswap/uikit'
+import { Text } from '@bbt-swap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'

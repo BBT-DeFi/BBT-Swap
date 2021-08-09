@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { ExpandableLabel, Flex, FlexProps, Text } from '@pancakeswap/uikit'
+import { ExpandableLabel, Flex, FlexProps, Text } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 interface FoldableTextProps extends FlexProps {
@@ -18,7 +18,7 @@ const StyledExpandableLabelWrapper = styled(Flex)`
   }
 `
 
-const StyledChildrenFlex = styled(Flex)<{ isExpanded?: boolean }>`
+const StyledChildrenFlex = styled(Flex) <{ isExpanded?: boolean }>`
   overflow: hidden;
   height: ${({ isExpanded }) => (isExpanded ? '100%' : '0px')};
   padding-bottom: ${({ isExpanded }) => (isExpanded ? '16px' : '0px')};

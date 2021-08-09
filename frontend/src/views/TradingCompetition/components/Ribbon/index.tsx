@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, LaurelLeftIcon, LaurelRightIcon } from '@pancakeswap/uikit'
+import { Flex, LaurelLeftIcon, LaurelRightIcon } from '@bbt-swap/uikit'
 import { RibbonProps } from '../../types'
 import {
   RibbonDownMidExpanding,
@@ -12,7 +12,7 @@ import {
 } from './RibbonStyles'
 import { Heading2Text, VisuallyHiddenHeading2Text } from '../CompetitionHeadingText'
 
-const Wrapper = styled(Flex)<{ ribbonDirection?: 'up' | 'down' }>`
+const Wrapper = styled(Flex) <{ ribbonDirection?: 'up' | 'down' }>`
   position: relative;
   display: inline-flex;
   align-items: ${({ ribbonDirection }) => (ribbonDirection === 'up' ? 'flex-end' : 'flex-start')};

@@ -13,7 +13,7 @@ import {
   Skeleton,
   Button,
   ArrowForwardIcon,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import { getFullDisplayBalance } from 'utils/formatBalance'
@@ -38,7 +38,7 @@ const StyledModal = styled(Modal)`
   max-width: 320px;
 `
 
-const ShortcutButtonsWrapper = styled(Flex)<{ isVisible: boolean }>`
+const ShortcutButtonsWrapper = styled(Flex) <{ isVisible: boolean }>`
   justify-content: space-between;
   margin-top: 8px;
   margin-bottom: 24px;

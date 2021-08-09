@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
+import { Box, Flex, Heading, Skeleton } from '@bbt-swap/uikit'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { useLottery, usePriceCakeBusd } from 'state/hooks'
@@ -79,7 +79,7 @@ const PrizeTotalBalance = styled(Balance)`
   -webkit-text-fill-color: transparent;
 `
 
-const StyledBuyTicketButton = styled(BuyTicketsButton)<{ disabled: boolean }>`
+const StyledBuyTicketButton = styled(BuyTicketsButton) <{ disabled: boolean }>`
   background: ${({ theme, disabled }) =>
     disabled ? theme.colors.disabled : 'linear-gradient(180deg, #7645d9 0%, #452a7a 100%)'};
   width: 200px;

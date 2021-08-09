@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Flex, ExpandableLabel, CardFooter, Skeleton, Heading, Box, Text } from '@pancakeswap/uikit'
+import { Flex, ExpandableLabel, CardFooter, Skeleton, Heading, Box, Text } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryRound } from 'state/types'
 import { useGetLotteryGraphDataById, usePriceCakeBusd } from 'state/hooks'

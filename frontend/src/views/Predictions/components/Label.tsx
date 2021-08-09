@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
 import styled from 'styled-components'
-import { BnbUsdtPairTokenIcon, Box, Card, PocketWatchIcon, Text } from '@pancakeswap/uikit'
+import { BnbUsdtPairTokenIcon, Box, Card, PocketWatchIcon, Text } from '@bbt-swap/uikit'
 import { formatBigNumberToFixed } from 'utils/formatBalance'
 import { useGetLastOraclePrice } from 'state/hooks'
 import { useTranslation } from 'contexts/Localization'
@@ -56,7 +56,7 @@ const Interval = styled(Text)`
   }
 `
 
-const Label = styled(Card)<{ dir: 'left' | 'right' }>`
+const Label = styled(Card) <{ dir: 'left' | 'right' }>`
   align-items: ${({ dir }) => (dir === 'right' ? 'flex-end' : 'flex-start')};
   border-radius: ${({ dir }) => (dir === 'right' ? '8px 8px 8px 24px' : '8px 8px 24px 8px')};
   display: flex;

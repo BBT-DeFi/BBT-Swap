@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, CardBody, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Box, CardBody, Flex, Text, useMatchBreakpoints } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import UnlockButton from 'components/UnlockButton'
@@ -15,7 +15,7 @@ import VaultCardActions from './VaultCardActions'
 import UnstakingFeeCountdownRow from './UnstakingFeeCountdownRow'
 import RecentCakeProfitRow from './RecentCakeProfitRow'
 
-const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
+const StyledCardBody = styled(CardBody) <{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
 `
 

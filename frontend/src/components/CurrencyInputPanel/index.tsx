@@ -1,6 +1,6 @@
 import React from 'react'
 import { Currency, Pair } from '@pancakeswap/sdk'
-import { Button, ChevronDownIcon, Text, useModal, Flex } from '@pancakeswap/uikit'
+import { Button, ChevronDownIcon, Text, useModal, Flex } from '@bbt-swap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -145,9 +145,9 @@ export default function CurrencyInputPanel({
                 <Text id="pair">
                   {(currency && currency.symbol && currency.symbol.length > 20
                     ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
-                        currency.symbol.length - 5,
-                        currency.symbol.length,
-                      )}`
+                      currency.symbol.length - 5,
+                      currency.symbol.length,
+                    )}`
                     : currency?.symbol) || t('Select a currency')}
                 </Text>
               )}

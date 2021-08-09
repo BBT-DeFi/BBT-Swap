@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Text, Flex, Link } from '@pancakeswap/uikit'
+import { Text, Flex, Link } from '@bbt-swap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import useWeb3Provider from 'hooks/useActiveWeb3React'
 import { getBscScanLink } from 'utils'

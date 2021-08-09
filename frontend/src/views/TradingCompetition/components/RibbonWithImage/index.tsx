@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex } from '@pancakeswap/uikit'
+import { Flex } from '@bbt-swap/uikit'
 import { RibbonProps } from '../../types'
 import Ribbon from '../Ribbon'
 
-const Wrapper = styled(Flex)<{ marginBottom?: string }>`
+const Wrapper = styled(Flex) <{ marginBottom?: string }>`
   position: relative;
   margin-bottom: ${({ marginBottom }) => marginBottom};
 `
@@ -24,7 +24,7 @@ const AbsoluteImageWrapper = styled.div`
   bottom: -8px;
 `
 
-const RibbonWrapper = styled(Flex)<{ ribbonDirection?: string }>`
+const RibbonWrapper = styled(Flex) <{ ribbonDirection?: string }>`
   position: absolute;
   width: 100%;
   z-index: 1;

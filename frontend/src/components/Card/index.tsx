@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Box } from '@pancakeswap/uikit'
+import { Box } from '@bbt-swap/uikit'
 
-const Card = styled(Box)<{
+const Card = styled(Box) <{
   width?: string
   padding?: string
   border?: string

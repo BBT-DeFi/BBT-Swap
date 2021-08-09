@@ -10,7 +10,7 @@ import {
   Flex,
   CardProps,
   AddIcon,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
@@ -58,14 +58,14 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
 
   const [token0Deposited, token1Deposited] =
     !!pair &&
-    !!totalPoolTokens &&
-    !!userPoolBalance &&
-    // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-    JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
+      !!totalPoolTokens &&
+      !!userPoolBalance &&
+      // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+      JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
       ? [
-          pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-          pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
-        ]
+        pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
+        pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
+      ]
       : [undefined, undefined]
 
   return (
@@ -161,14 +161,14 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
 
   const [token0Deposited, token1Deposited] =
     !!pair &&
-    !!totalPoolTokens &&
-    !!userPoolBalance &&
-    // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-    JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
+      !!totalPoolTokens &&
+      !!userPoolBalance &&
+      // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+      JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
       ? [
-          pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-          pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
-        ]
+        pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
+        pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false),
+      ]
       : [undefined, undefined]
 
   return (

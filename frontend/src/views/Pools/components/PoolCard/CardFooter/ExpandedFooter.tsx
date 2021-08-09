@@ -15,7 +15,7 @@ import {
   Button,
   Link,
   HelpIcon,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import { BASE_BSC_SCAN_URL } from 'config'
 import { useBlock, useCakeVault } from 'state/hooks'
 import { Pool } from 'state/types'

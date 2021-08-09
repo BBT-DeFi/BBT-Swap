@@ -1,6 +1,6 @@
 import React from 'react'
 import { LotteryTicket } from 'config/constants/types'
-import { Flex, Text } from '@pancakeswap/uikit'
+import { Flex, Text } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
 import { parseRetreivedNumber } from '../helpers'

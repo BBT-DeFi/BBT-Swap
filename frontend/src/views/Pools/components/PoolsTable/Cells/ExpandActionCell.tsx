@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, ChevronDownIcon } from '@pancakeswap/uikit'
+import { Text, ChevronDownIcon } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import BaseCell from './BaseCell'
 
@@ -23,7 +23,7 @@ const StyledCell = styled(BaseCell)`
   }
 `
 
-const ArrowIcon = styled(ChevronDownIcon)<{ toggled: boolean }>`
+const ArrowIcon = styled(ChevronDownIcon) <{ toggled: boolean }>`
   transform: ${({ toggled }) => (toggled ? 'rotate(180deg)' : 'rotate(0)')};
   height: 24px;
 `

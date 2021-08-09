@@ -10,7 +10,7 @@ import {
   CheckmarkCircleIcon,
   useWalletModal,
   useModal,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import { useHistory } from 'react-router-dom'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'
@@ -79,10 +79,10 @@ const BattleCta: React.FC<CompetitionProps> = ({
 
   const isButtonDisabled = Boolean(
     isLoading ||
-      currentPhase.state === OVER ||
-      registeredAndNotStarted ||
-      finishedAndPrizesClaimed ||
-      finishedAndNothingToClaim,
+    currentPhase.state === OVER ||
+    registeredAndNotStarted ||
+    finishedAndPrizesClaimed ||
+    finishedAndNothingToClaim,
   )
 
   const getHeadingText = () => {

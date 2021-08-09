@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { Flex } from '@pancakeswap/uikit'
+import { Flex } from '@bbt-swap/uikit'
 
 interface StickerProps {
   backgroundColor?: string
   borderColor?: string
 }
 
-const Sticker = styled(Flex)<StickerProps>`
+const Sticker = styled(Flex) <StickerProps>`
   width: 100%;
   height: 100%;
   background-color: ${({ theme, backgroundColor }) => backgroundColor || theme.colors.invertedContrast};

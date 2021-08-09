@@ -4,7 +4,7 @@ import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, Percent, WETH } from '@pancakeswap/sdk'
-import { Button, Text, AddIcon, ArrowDownIcon, CardBody, Slider, Box, Flex, useModal } from '@pancakeswap/uikit'
+import { Button, Text, AddIcon, ArrowDownIcon, CardBody, Slider, Box, Flex, useModal } from '@bbt-swap/uikit'
 import { RouteComponentProps } from 'react-router'
 import { BigNumber } from '@ethersproject/bignumber'
 import { useTranslation } from 'contexts/Localization'
@@ -78,8 +78,8 @@ export default function RemoveLiquidity({
     [Field.LIQUIDITY_PERCENT]: parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
       ? '0'
       : parsedAmounts[Field.LIQUIDITY_PERCENT].lessThan(new Percent('1', '100'))
-      ? '<1'
-      : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
+        ? '<1'
+        : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
     [Field.LIQUIDITY]:
       independentField === Field.LIQUIDITY ? typedValue : parsedAmounts[Field.LIQUIDITY]?.toSignificant(6) ?? '',
     [Field.CURRENCY_A]:
@@ -296,9 +296,8 @@ export default function RemoveLiquidity({
           setAttemptingTxn(false)
 
           addTransaction(response, {
-            summary: `Remove ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${
-              currencyA?.symbol
-            } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencyB?.symbol}`,
+            summary: `Remove ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${currencyA?.symbol
+              } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencyB?.symbol}`,
           })
 
           setTxHash(response.hash)
@@ -395,8 +394,8 @@ export default function RemoveLiquidity({
   const oneCurrencyIsETH = currencyA === ETHER || currencyB === ETHER
   const oneCurrencyIsWETH = Boolean(
     chainId &&
-      ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
-        (currencyB && currencyEquals(WETH[chainId], currencyB))),
+    ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
+      (currencyB && currencyEquals(WETH[chainId], currencyB))),
   )
 
   const handleSelectCurrencyA = useCallback(
@@ -531,17 +530,15 @@ export default function RemoveLiquidity({
                     <RowBetween style={{ justifyContent: 'flex-end', fontSize: '14px' }}>
                       {oneCurrencyIsETH ? (
                         <StyledInternalLink
-                          to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${
-                            currencyB === ETHER ? WETH[chainId].address : currencyIdB
-                          }`}
+                          to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${currencyB === ETHER ? WETH[chainId].address : currencyIdB
+                            }`}
                         >
                           {t('Receive WBNB')}
                         </StyledInternalLink>
                       ) : oneCurrencyIsWETH ? (
                         <StyledInternalLink
-                          to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA}/${
-                            currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB
-                          }`}
+                          to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA}/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB
+                            }`}
                         >
                           {t('Receive BNB')}
                         </StyledInternalLink>

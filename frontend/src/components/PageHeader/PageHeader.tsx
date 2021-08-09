@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from '@pancakeswap/uikit'
+import { Box } from '@bbt-swap/uikit'
 import Container from '../Layout/Container'
 
-const Outer = styled(Box)<{ background?: string }>`
+const Outer = styled(Box) <{ background?: string }>`
   background: ${({ theme, background }) => background || theme.colors.gradients.bitkubGradient};
 `
 

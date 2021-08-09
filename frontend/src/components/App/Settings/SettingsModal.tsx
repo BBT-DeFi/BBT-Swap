@@ -9,7 +9,7 @@ import {
   ModalBody,
   InjectedModalProps,
   Toggle,
-} from '@pancakeswap/uikit'
+} from '@bbt-swap/uikit'
 import {
   useAudioModeManager,
   useExpertModeManager,
@@ -101,9 +101,9 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
               onChange={
                 expertMode
                   ? () => {
-                      onChangeRecipient(null)
-                      toggleExpertMode()
-                    }
+                    onChangeRecipient(null)
+                    toggleExpertMode()
+                  }
                   : () => setShowConfirmExpertModal(true)
               }
             />

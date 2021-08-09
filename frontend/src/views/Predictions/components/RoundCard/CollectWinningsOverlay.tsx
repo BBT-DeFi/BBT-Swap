@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, TrophyGoldIcon } from '@pancakeswap/uikit'
+import { Flex, TrophyGoldIcon } from '@bbt-swap/uikit'
 import { useGetIsClaimable } from 'state/hooks'
 import { useTranslation } from 'contexts/Localization'
 import CollectWinningsButton from '../CollectWinningsButton'
@@ -12,7 +12,7 @@ interface CollectWinningsOverlayProps {
   isBottom?: boolean
 }
 
-const Wrapper = styled(Flex)<{ isBottom: CollectWinningsOverlayProps['isBottom'] }>`
+const Wrapper = styled(Flex) <{ isBottom: CollectWinningsOverlayProps['isBottom'] }>`
   background-color: ${({ theme }) => theme.colors.secondary};
   left: 0;
   position: absolute;

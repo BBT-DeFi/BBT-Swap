@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { DefaultTheme } from 'styled-components'
-import { Box, Flex, FlexProps, Text } from '@pancakeswap/uikit'
+import { Box, Flex, FlexProps, Text } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { BetPosition, NodeRound, Round } from 'state/types'
 import { formatUsdv2, formatBnbv2 } from '../../helpers'
@@ -114,7 +114,7 @@ const getBackgroundColor = ({
   return theme.colors.cardBorder
 }
 
-const Background = styled(Box)<RoundResultBoxProps>`
+const Background = styled(Box) <RoundResultBoxProps>`
   background: ${getBackgroundColor};
   border-radius: 16px;
   padding: 2px;

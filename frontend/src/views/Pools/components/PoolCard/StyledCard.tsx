@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { Card, Box } from '@pancakeswap/uikit'
+import { Card, Box } from '@bbt-swap/uikit'
 
 const PromotedGradient = keyframes`
   0% {
@@ -17,7 +17,7 @@ interface PromotedStyleCardProps {
   isDesktop: boolean
 }
 
-export const StyledCard = styled(Card)<{ isPromoted?: PromotedStyleCardProps; isFinished?: boolean }>`
+export const StyledCard = styled(Card) <{ isPromoted?: PromotedStyleCardProps; isFinished?: boolean }>`
   max-width: 352px;
   margin: 0 8px 24px;
   display: flex;

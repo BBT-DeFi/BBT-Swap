@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Flex, Image, Text } from '@pancakeswap/uikit'
+import { Heading, Flex, Image, Text } from '@bbt-swap/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import { useTranslation } from 'contexts/Localization'
@@ -151,12 +151,12 @@ const Pools: React.FC = () => {
             }
             return pool.isAutoVault
               ? getCakeVaultEarnings(
-                  account,
-                  cakeAtLastUserAction,
-                  userShares,
-                  pricePerFullShare,
-                  pool.earningTokenPrice,
-                ).autoUsdToDisplay
+                account,
+                cakeAtLastUserAction,
+                userShares,
+                pricePerFullShare,
+                pool.earningTokenPrice,
+              ).autoUsdToDisplay
               : pool.userData.pendingReward.times(pool.earningTokenPrice).toNumber()
           },
           'desc',

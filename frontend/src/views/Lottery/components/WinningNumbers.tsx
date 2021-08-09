@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from '@pancakeswap/uikit'
+import { Flex } from '@bbt-swap/uikit'
 import { parseRetreivedNumber } from '../helpers'
 import { BallWithNumber } from '../svgs'
 

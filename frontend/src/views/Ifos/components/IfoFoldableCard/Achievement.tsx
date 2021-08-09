@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, LinkExternal, Image, Text, PrizeIcon, Skeleton } from '@pancakeswap/uikit'
+import { Flex, LinkExternal, Image, Text, PrizeIcon, Skeleton } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { PublicIfoData } from 'views/Ifos/types'
 import { Ifo } from 'config/constants/types'
@@ -24,7 +24,7 @@ const Container = styled(Flex)`
   }
 `
 
-const AchievementFlex = styled(Flex)<{ isFinished: boolean }>`
+const AchievementFlex = styled(Flex) <{ isFinished: boolean }>`
   ${({ isFinished }) => (isFinished ? 'filter: grayscale(100%)' : '')};
 `
 

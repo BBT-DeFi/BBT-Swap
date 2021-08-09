@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Svg, SvgProps, Box } from '@pancakeswap/uikit'
+import { Svg, SvgProps, Box } from '@bbt-swap/uikit'
 
 interface StyledSvgProps {
   svgFill?: string
@@ -48,20 +48,20 @@ const CurvedSvg: React.FC<SvgProps> = (props) => {
 
 export default CurvedSvg
 
-export const CurvedSvgTop = styled(CurvedSvg)<StyledSvgProps>`
+export const CurvedSvgTop = styled(CurvedSvg) <StyledSvgProps>`
   ${sharedStyles}
   transform: rotate(180deg);
   margin-bottom: -2px;
   fill: ${({ svgFill, theme }) => svgFill || theme.colors.background};
 `
 
-export const CurvedSvgBottom = styled(CurvedSvg)<StyledSvgProps>`
+export const CurvedSvgBottom = styled(CurvedSvg) <StyledSvgProps>`
   ${sharedStyles}
   margin-top: -2px;
   fill: ${({ svgFill, theme }) => svgFill || theme.colors.background};
 `
 
-const ConcaveContainer = styled(Box)<{
+const ConcaveContainer = styled(Box) <{
   clipPath: string
   concaveBackgroundLight?: string
   concaveBackgroundDark?: string

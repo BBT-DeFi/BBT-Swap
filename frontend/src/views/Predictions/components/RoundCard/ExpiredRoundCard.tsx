@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
-import { Box, BlockIcon, CardBody } from '@pancakeswap/uikit'
+import { Box, BlockIcon, CardBody } from '@bbt-swap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { NodeRound, BetPosition, NodeLedger } from 'state/types'
 import { useBlock, useGetBetByEpoch } from 'state/hooks'

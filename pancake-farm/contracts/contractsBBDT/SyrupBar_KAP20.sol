@@ -1,8 +1,8 @@
 pragma solidity 0.6.12;
 
-import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
-import "@pancakeswap/pancake-swap-lib/contracts/GSN/Context.sol";
-import "@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol";
+//import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
+//import "@pancakeswap/pancake-swap-lib/contracts/GSN/Context.sol";
+//import "@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol";
 // import "./BBDT.sol";
 import "./BBDTlikeCake.sol";
 import "./KAP20.sol";

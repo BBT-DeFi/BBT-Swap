@@ -1,8 +1,8 @@
 // CakeToken with Governance.
-import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/SafeBEP20.sol';
-import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
-import "@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol";
-import "@pancakeswap/pancake-swap-lib/contracts/GSN/Context.sol";
+//import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/SafeBEP20.sol';
+//import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
+//import "@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol";
+//import "@pancakeswap/pancake-swap-lib/contracts/GSN/Context.sol";
 import "./KAP20.sol";
 contract BBDT is KAP20('BBDT Token', 'BBDT') {
     

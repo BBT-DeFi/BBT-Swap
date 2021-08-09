@@ -9,7 +9,7 @@ import '@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol';
 
 // import "./CakeToken.sol";
 import "./BBDTlikeCake.sol";
-import "./SyrupBarOld.sol";
+import "./SyrupBar_KAP20.sol";
 
 // import "@nomiclabs/buidler/console.sol";
 

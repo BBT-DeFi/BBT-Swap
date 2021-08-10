@@ -2,7 +2,7 @@ export default {
   masterChef: {
     97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
-    25925: '0x384e8898B437953257265E65F32201cDF100ae5C' // farm
+    25925: '0xdb3a9C7816554d582CDD2Bef067A47152c704d84' // farm
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
@@ -17,7 +17,7 @@ export default {
   multiCall: {
     56: ' 0',
     97: '0x8F3273Fb89B075b1645095ABaC6ed17B2d4Bc576',
-    25925: '' // mai tong chai kor dai
+    25925: '0x1cFB015a9FfF8C382B3fb462947D0d4Ea9513878' // fetch data for farm
   },
   pancakeProfile: {
     56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',

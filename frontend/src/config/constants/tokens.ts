@@ -16,6 +16,22 @@ export const CAKE: { [chainId: number]: Token } = {
     'PancakeSwap Token',
   ),
 }
+export const BBDT: { [chainId: number]: Token } = {
+  [ChainId.MAINNET]: new Token(
+    ChainId.MAINNET,
+    '0x383fFd1405D2e80B594A845EA834a78b4d1C092A',
+    18,
+    'BBDT',
+    'BBT DeFi Test',
+  ),
+  [ChainId.TESTNET]: new Token(
+    ChainId.TESTNET,
+    '0x383fFd1405D2e80B594A845EA834a78b4d1C092A',
+    18,
+    'BBDT',
+    'BBT DeFi Test',
+  ),
+}
 export const BUSD: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET,
@@ -80,6 +96,12 @@ export const USDC = new Token(
 )
 
 const tokens = {
+  bbdt: {
+    symbol: 'BBDT',
+    address: { '56': '', '97': '', '25925': '0x383fFd1405D2e80B594A845EA834a78b4d1C092A' },
+    decimals: 18,
+    projectLink: '',
+  },
   a: {
     symbol: 'A',
     address: { '56': '', '97': '', '25925': '0x7d7e6a44118e9baef79e74c25054101f32cdf983' },
@@ -850,7 +872,7 @@ const tokens = {
     address: {
       '56': '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
       '97': '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
-      '25925': '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
+      '25925': '0xd10A30dd014557904F4BedB06798721Fdb7977F8',
     },
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
@@ -880,7 +902,7 @@ const tokens = {
     address: {
       '56': '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
       '97': '',
-      '25925': '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+      '25925': '0x06188Bb4Eee443eA07E59049B7af16Bac948d69E',
     },
     decimals: 18,
     projectLink: 'https://www.paxos.com/busd/',

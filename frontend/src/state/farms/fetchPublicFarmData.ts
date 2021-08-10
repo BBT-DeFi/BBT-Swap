@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import masterchefABI from 'config/abi/masterchef.json'
-import erc20 from 'config/abi/erc20.json'
+import kap20 from 'config/abi/kap20.json'
 import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { BIG_TEN, BIG_ZERO } from 'utils/bigNumber'
 import multicall from 'utils/multicall'
@@ -57,16 +57,19 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
     },
   ]
 
-  console.log({calls})
+  // console.log({pid})
+
 
   const [tokenBalanceLP, quoteTokenBalanceLP, lpTokenBalanceMC, lpTotalSupply, tokenDecimals, quoteTokenDecimals] =
-    await multicall(erc20, calls)
+    await multicall(kap20, calls)
 
   // Ratio in % of LP tokens that are staked in the MC, vs the total number in circulation
   const lpTokenRatio = new BigNumber(lpTokenBalanceMC).div(new BigNumber(lpTotalSupply))
 
   // Raw amount of token in the LP, including those not staked
   const tokenAmountTotal = new BigNumber(tokenBalanceLP).div(BIG_TEN.pow(tokenDecimals))
+  // console.log(`tokenAmountTotal  ${tokenAmountTotal.toString()}`);
+
   const quoteTokenAmountTotal = new BigNumber(quoteTokenBalanceLP).div(BIG_TEN.pow(quoteTokenDecimals))
 
   // Amount of token in the LP that are staked in the MC (i.e amount of token * lp ratio)
@@ -75,6 +78,7 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
 
   // Total staked in LP, in quote token value
   const lpTotalInQuoteToken = quoteTokenAmountMc.times(new BigNumber(2))
+  console.log("s")
 
   // Only make masterchef calls if farm has pid
   const [info, totalAllocPoint] =
@@ -94,8 +98,6 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
 
   const allocPoint = info ? new BigNumber(info.allocPoint?._hex) : BIG_ZERO
   const poolWeight = totalAllocPoint ? allocPoint.div(new BigNumber(totalAllocPoint)) : BIG_ZERO
-
-  console.log(poolWeight)
   
   return {
     tokenAmountMc: tokenAmountMc.toJSON(),

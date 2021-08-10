@@ -7,17 +7,28 @@ const farms: FarmConfig[] = [
    */
   {
     pid: 0,
-    lpSymbol: 'CAKE',
+    lpSymbol: 'BBDT',
     lpAddresses: {
-      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-      25925: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      97: '',
+      56: '',
+      25925: '0x383fFd1405D2e80B594A845EA834a78b4d1C092A'
     },
-    token: tokens.a,
-    quoteToken: tokens.b,
+    token: tokens.bbdt,
+    quoteToken: tokens.busd,
+  },
+    {
+    pid: 1,
+    lpSymbol: 'LP1',
+    lpAddresses: {
+      97: '',
+      56: '',
+      25925: '0xDA12e84c232044eE1dCE6c38927aA3ac5EEB111b'
+    },
+    token: tokens.bbdt,
+    quoteToken: tokens.busd,
   },
   {
-    pid: 251,
+    pid: 2,
     lpSymbol: 'A-B LP',
     lpAddresses: {
       97: '',
@@ -28,29 +39,41 @@ const farms: FarmConfig[] = [
     quoteToken: tokens.b,
   },
   {
-    pid: 252,
+    pid: 3,
     lpSymbol: 'C-D LP',
     lpAddresses: {
       97: '',
       56: '',
-      25925: '0x6Bc840CDbf504360Aa2dDbD02Bd70Fa7C95C084B'
+      25925 : '0x6Bc840CDbf504360Aa2dDbD02Bd70Fa7C95C084B'
     },
     token: tokens.c,
     quoteToken: tokens.d,
-  }
+  },
+  // {
+  //   pid: 251,
+  //   lpSymbol: 'A-B LP',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '',
+  //     25925 : '0x2D105fF34641dc54cf7D17df7161C6867DA3f68B'
+  //   },
+  //   token: tokens.a,
+  //   quoteToken: tokens.b,
+  // },
+  // {
+  //   pid: 252,
+  //   lpSymbol: 'C-D LP',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '',
+  //     25925: '0x6Bc840CDbf504360Aa2dDbD02Bd70Fa7C95C084B'
+  //   },
+  //   token: tokens.c,
+  //   quoteToken: tokens.d,
+  // },
   /**
    * V3 by order of release (some may be out of PID order due to multiplier boost)
    */
-  // {
-  //   pid: 429,
-  //   lpSymbol: 'CHESS-USDC LP',
-  //   lpAddresses: {
-  //     97: '',
-  //     56: '0x1472976e0b97f5b2fc93f1fff14e2b5c4447b64f',
-  //   },
-  //   token: tokens.chess,
-  //   quoteToken: tokens.usdc,
-  // },
   // {
   //   pid: 428,
   //   lpSymbol: 'TITAN-BUSD LP',

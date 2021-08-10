@@ -59,7 +59,8 @@ export const usePollFarmsData = (includeArchive = false) => {
   useEffect(() => {
     const farmsToFetch = includeArchive ? farmsConfig : nonArchivedFarms
     const pids = farmsToFetch.map((farmToFetch) => farmToFetch.pid)
-
+    // console.log({farmsToFetch})
+    // console.log({pids})
     dispatch(fetchFarmsPublicDataAsync(pids))
 
     if (account) {
@@ -78,7 +79,7 @@ export const usePollCoreFarmData = () => {
   const { fastRefresh } = useRefresh()
 
   useEffect(() => {
-    dispatch(fetchFarmsPublicDataAsync([251, 252]))
+    dispatch(fetchFarmsPublicDataAsync([1, 2]))   // //fix pid
   }, [dispatch, fastRefresh])
 }
 
@@ -99,6 +100,8 @@ export const usePollBlockNumber = () => {
 
 export const useFarms = (): FarmsState => {
   const farms = useSelector((state: State) => state.farms)
+  // console.log({farms})
+
   return farms
 }
 
@@ -114,7 +117,6 @@ export const useFarmFromLpSymbol = (lpSymbol: string): Farm => {
 
 export const useFarmUser = (pid) => {
   const farm = useFarmFromPid(pid)
-
   return {
     allowance: farm.userData ? new BigNumber(farm.userData.allowance) : BIG_ZERO,
     tokenBalance: farm.userData ? new BigNumber(farm.userData.tokenBalance) : BIG_ZERO,
@@ -342,12 +344,13 @@ export const useAchievements = () => {
 }
 
 export const usePriceBnbBusd = (): BigNumber => {
-  const bnbBusdFarm = useFarmFromPid(252)
+  const bnbBusdFarm = useFarmFromPid(2)
   return new BigNumber(bnbBusdFarm.quoteToken.busdPrice)
 }
 
 export const usePriceCakeBusd = (): BigNumber => {
-  const cakeBnbFarm = useFarmFromPid(251)
+  const cakeBnbFarm = useFarmFromPid(1)
+  // console.log(cakeBnbFarm.token.busdPrice)
   return new BigNumber(cakeBnbFarm.token.busdPrice)
 }
 

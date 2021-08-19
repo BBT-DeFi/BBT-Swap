@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { Button, ChevronUpIcon } from '@pancakeswap/uikit'
+import { Button, ChevronUpIcon, Text} from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { Pool } from 'state/types'
 import PoolRow from './PoolRow'
@@ -54,9 +54,9 @@ const PoolsTable: React.FC<PoolsTableProps> = ({ pools, userDataLoaded, account 
           />
         ))}
         <ScrollButtonContainer>
-          <Button variant="text" onClick={scrollToTop}>
-            {t('To Top')}
-            <ChevronUpIcon color="primary" />
+          <Button variant="bbtColor" onClick={scrollToTop}>
+            <Text color="bitkub">{t('To Top')}</Text>
+            <ChevronUpIcon color="bitkub" />
           </Button>
         </ScrollButtonContainer>
       </StyledTable>

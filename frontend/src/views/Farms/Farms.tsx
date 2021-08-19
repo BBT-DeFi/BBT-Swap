@@ -158,11 +158,15 @@ const Farms: React.FC = () => {
         if (!farm.lpTotalInQuoteToken || !farm.quoteToken.busdPrice) {
           return farm
         }
+        console.log({farm})
+        console.log(`quoteToken.lpTotalInQuoteToken ${farm.lpSymbol} : ${farm.lpTotalInQuoteToken}`)
+        console.log(`quoteToken.busdPrice : ${farm.quoteToken.busdPrice}`)
+
         const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteToken.busdPrice)
         const { cakeRewardsApr, lpRewardsApr } = isActive
           ? getFarmApr(new BigNumber(farm.poolWeight), cakePrice, totalLiquidity, farm.lpAddresses[ChainId.MAINNET])
           : { cakeRewardsApr: 0, lpRewardsApr: 0 }
-
+    
         return { ...farm, apr: cakeRewardsApr, lpRewardsApr, liquidity: totalLiquidity }
       })
 

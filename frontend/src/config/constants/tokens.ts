@@ -96,6 +96,12 @@ export const USDC = new Token(
 )
 
 const tokens = {
+  kub: {
+    symbol: 'D',
+    address: { '56': '', '97': '', '25925': '0xe55fe8516946aee1924ca7ad08056a5e6eb6f956' },
+    decimals: 18,
+    projectLink: '',
+  },
   bbdt: {
     symbol: 'BBDT',
     address: { '56': '', '97': '', '25925': '0x383fFd1405D2e80B594A845EA834a78b4d1C092A' },

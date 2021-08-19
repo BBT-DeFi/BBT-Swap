@@ -158,7 +158,6 @@ export const useLpTokenPrice = (symbol: string) => {
     const totalLpTokens = getBalanceAmount(new BigNumber(farm.lpTotalSupply))
     lpTokenPrice = overallValueOfAllTokensInFarm.div(totalLpTokens)
   }
-
   return lpTokenPrice
 }
 
@@ -345,12 +344,16 @@ export const useAchievements = () => {
 
 export const usePriceBnbBusd = (): BigNumber => {
   const bnbBusdFarm = useFarmFromPid(2)
+  // //fix pid
   return new BigNumber(bnbBusdFarm.quoteToken.busdPrice)
 }
 
 export const usePriceCakeBusd = (): BigNumber => {
-  const cakeBnbFarm = useFarmFromPid(1)
-  // console.log(cakeBnbFarm.token.busdPrice)
+  const cakeBnbFarm = useFarmFromPid(2)
+  // //fix pid
+  console.log("cakeBnbFarm")
+  console.log({cakeBnbFarm})
+  console.log(cakeBnbFarm.token.busdPrice)
   return new BigNumber(cakeBnbFarm.token.busdPrice)
 }
 

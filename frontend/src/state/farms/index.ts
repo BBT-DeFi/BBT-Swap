@@ -47,7 +47,7 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<Farm[], number[]>(
     const farmsWithoutHelperLps = farmsWithPrices.filter((farm: Farm) => {
       return farm.pid || farm.pid === 0
     })
-    console.log({farmsWithoutHelperLps})
+    // console.log({farmsWithoutHelperLps})
 
     return farmsWithoutHelperLps
   },
@@ -69,7 +69,6 @@ export const fetchFarmUserDataAsync = createAsyncThunk<FarmUserDataResponse[], {
     const userFarmTokenBalances = await fetchFarmUserTokenBalances(account, farmsToFetch)
     const userStakedBalances = await fetchFarmUserStakedBalances(account, farmsToFetch)
     const userFarmEarnings = await fetchFarmUserEarnings(account, farmsToFetch)
-
     return userFarmAllowances.map((farmAllowance, index) => {
       return {
         pid: farmsToFetch[index].pid,
@@ -99,6 +98,8 @@ export const farmsSlice = createSlice({
     builder.addCase(fetchFarmsPublicDataAsync.fulfilled, (state, action) => {
       state.data = state.data.map((farm) => {
         const liveFarmData = action.payload.find((farmData) => farmData.pid === farm.pid)
+        // console.log({farm})
+        // console.log({liveFarmData})
         return { ...farm, ...liveFarmData }
       })
     })

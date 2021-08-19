@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { useTable, Button, ChevronUpIcon, ColumnType } from '@pancakeswap/uikit'
+import { useTable, Button, ChevronUpIcon, ColumnType ,Text } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 import Row, { RowProps } from './Row'
@@ -84,8 +84,8 @@ const FarmTable: React.FC<ITableProps> = (props) => {
         </TableWrapper>
         <ScrollButtonContainer>
           <Button variant="text" onClick={scrollToTop}>
-            {t('To Top')}
-            <ChevronUpIcon color="primary" />
+            <Text color="bitkub">{t('To Top')}</Text>
+            <ChevronUpIcon color="bitkub" />
           </Button>
         </ScrollButtonContainer>
       </TableContainer>

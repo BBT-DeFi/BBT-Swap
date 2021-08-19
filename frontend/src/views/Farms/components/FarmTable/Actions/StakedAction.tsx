@@ -117,7 +117,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
       return (
         <ActionContainer>
           <ActionTitles>
-            <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+            <Text bold textTransform="uppercase" color="bitkub" fontSize="12px" pr="4px">
               {lpSymbol}
             </Text>
             <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">

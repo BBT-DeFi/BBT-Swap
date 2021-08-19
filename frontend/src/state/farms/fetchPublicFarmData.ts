@@ -65,20 +65,25 @@ const fetchFarm = async (farm: Farm): Promise<PublicFarmData> => {
 
   // Ratio in % of LP tokens that are staked in the MC, vs the total number in circulation
   const lpTokenRatio = new BigNumber(lpTokenBalanceMC).div(new BigNumber(lpTotalSupply))
+  console.log(`Fecth Public PID ${pid} lpTokenBalanceMC div lpTotalSupply ${lpTokenBalanceMC} / ${lpTotalSupply} =  lpTokenRatio  ${lpTokenRatio}`)
+  console.log(`Fecth Public lpTokenRatio ${lpTokenRatio}`)
 
   // Raw amount of token in the LP, including those not staked
   const tokenAmountTotal = new BigNumber(tokenBalanceLP).div(BIG_TEN.pow(tokenDecimals))
-  // console.log(`tokenAmountTotal  ${tokenAmountTotal.toString()}`);
 
   const quoteTokenAmountTotal = new BigNumber(quoteTokenBalanceLP).div(BIG_TEN.pow(quoteTokenDecimals))
+  console.log(`Fecth Public quoteTokenBalanceLP ${quoteTokenBalanceLP}`)
 
   // Amount of token in the LP that are staked in the MC (i.e amount of token * lp ratio)
   const tokenAmountMc = tokenAmountTotal.times(lpTokenRatio)
   const quoteTokenAmountMc = quoteTokenAmountTotal.times(lpTokenRatio)
+  console.log(`Fecth Public quoteTokenAmountMc ${quoteTokenAmountMc}`)
 
   // Total staked in LP, in quote token value
   const lpTotalInQuoteToken = quoteTokenAmountMc.times(new BigNumber(2))
-  console.log("s")
+  console.log(`Fecth Public lpTotalInQuoteToken ${lpTotalInQuoteToken}`)
+
+  console.log(`////////////////`)
 
   // Only make masterchef calls if farm has pid
   const [info, totalAllocPoint] =

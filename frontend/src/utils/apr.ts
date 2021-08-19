@@ -36,11 +36,15 @@ export const getFarmApr = (
   farmAddress: string,
 ): { cakeRewardsApr: number; lpRewardsApr: number } => {
   const yearlyCakeRewardAllocation = CAKE_PER_YEAR.times(poolWeight)
+  console.log("cakePriceUsd.toString()")
+  console.log(cakePriceUsd.toString())
   const cakeRewardsApr = yearlyCakeRewardAllocation.times(cakePriceUsd).div(poolLiquidityUsd).times(100)
   let cakeRewardsAprAsNumber = null
   if (!cakeRewardsApr.isNaN() && cakeRewardsApr.isFinite()) {
     cakeRewardsAprAsNumber = cakeRewardsApr.toNumber()
   }
+  console.log("yearlyCakeRewardAllocation.toString()")
+  console.log(yearlyCakeRewardAllocation.toString())
   const lpRewardsApr = lpAprs[farmAddress?.toLocaleLowerCase()] ?? 0
   return { cakeRewardsApr: cakeRewardsAprAsNumber, lpRewardsApr }
 }

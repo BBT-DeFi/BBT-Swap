@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { BIG_ONE, BIG_ZERO } from 'utils/bigNumber'
+import { BIG_ONE, BIG_TEN, BIG_ZERO } from 'utils/bigNumber'
 import { filterFarmsByQuoteToken } from 'utils/farmsPriceHelpers'
 import { Farm } from 'state/types'
 
@@ -57,6 +57,10 @@ const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: 
     return bnbPriceBusd
   }
 
+  // if (farm.quoteToken.symbol === 'B') {
+  //   return BIG_TEN
+  // }
+
   if (!quoteTokenFarm) {
     return BIG_ZERO
   }
@@ -69,23 +73,29 @@ const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: 
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
+
+
   return BIG_ZERO
 }
 
 const fetchFarmsPrices = async (farms) => {
   // // Liquidity
-  const bnbBusdFarm = farms.find((farm: Farm) => farm.pid === 2) 
+  const bnbBusdFarm = farms.find((farm: Farm) => farm.pid === 2)
+  console.log({bnbBusdFarm})
   // //fix pid
   const bnbPriceBusd = bnbBusdFarm.tokenPriceVsQuote ? BIG_ONE.div(bnbBusdFarm.tokenPriceVsQuote) : BIG_ZERO
+  // console.log({bnbPriceBusd})
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol)
     const baseTokenPrice = getFarmBaseTokenPrice(farm, quoteTokenFarm, bnbPriceBusd)
     const quoteTokenPrice = getFarmQuoteTokenPrice(farm, quoteTokenFarm, bnbPriceBusd)
     const token = { ...farm.token, busdPrice: baseTokenPrice.toJSON() }
+    console.log({token})
     const quoteToken = { ...farm.quoteToken, busdPrice: quoteTokenPrice.toJSON() }
+    console.log({quoteToken})
     return { ...farm, token, quoteToken }
   })
-  console.log({farmsWithPrices})
+  // console.log({farmsWithPrices})
   return farmsWithPrices
 }
 

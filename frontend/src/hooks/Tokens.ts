@@ -56,7 +56,7 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
 
 export function useDefaultTokens(): { [address: string]: Token } {
   const defaultList = useDefaultTokenList()
-  console.log(defaultList)
+  // console.log(defaultList)
   return useTokensFromMap(defaultList, false)
 }
 

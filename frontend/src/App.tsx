@@ -79,10 +79,10 @@ const App: React.FC = () => {
             <Route path="/lottery">
               <Lottery />
             </Route>
-            {/* <Route path="/ifo">
+            <Route path="/ifo">
               <Ifos />
             </Route>
-            <Route path="/collectibles">
+            {/* <Route path="/collectibles">
               <Collectibles />
             </Route>
             <Route exact path="/teams">

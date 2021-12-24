@@ -2620,9 +2620,8 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@pancakeswap/uikit@https://github.com/thanakiat-gusgus/bbt-uikit.git", "@pancakeswap/uikit@https://github.com/thanakiat-gusgus/bbt-uikit.git#master":
+"@pancakeswap/uikit@https://github.com/thanakiat-gusgus/bbt-uikit.git":
   version "0.41.0"
-  uid cd39ae9e949ffada005392aa9c08d14bc71ab1fc
   resolved "https://github.com/thanakiat-gusgus/bbt-uikit.git#cd39ae9e949ffada005392aa9c08d14bc71ab1fc"
   dependencies:
     "@popperjs/core" "^2.9.2"

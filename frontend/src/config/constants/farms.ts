@@ -5,49 +5,27 @@ const farms: FarmConfig[] = [
   /**
    * These 3 farms (PID 0, 251, 252) should always be at the top of the file.
    */
-  {
-    pid: 0,
-    lpSymbol: 'BBDT',
-    lpAddresses: {
-      97: '',
-      56: '',
-      25925: '0x383fFd1405D2e80B594A845EA834a78b4d1C092A'
-    },
-    token: tokens.bbdt,
-    quoteToken: tokens.busd,
-  },
+  // {
+  //   pid: 0,
+  //   lpSymbol: 'BBDT',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '',
+  //     25925: '0x383fFd1405D2e80B594A845EA834a78b4d1C092A'
+  //   },
+  //   token: tokens.bbdt,
+  //   quoteToken: tokens.busd,
+  // },
     {
     pid: 1,
-    lpSymbol: 'LP1',
-    lpAddresses: {
-      97: '',
-      56: '',
-      25925: '0xDA12e84c232044eE1dCE6c38927aA3ac5EEB111b'
-    },
-    token: tokens.bbdt,
-    quoteToken: tokens.busd,
-  },
-  {
-    pid: 2,
     lpSymbol: 'A-B LP',
     lpAddresses: {
       97: '',
       56: '',
-      25925 : '0x2D105fF34641dc54cf7D17df7161C6867DA3f68B'
+      25925: '0xD2875fB88e04734a3246aF0e57C45C40aA363a37'
     },
     token: tokens.a,
     quoteToken: tokens.b,
-  },
-  {
-    pid: 3,
-    lpSymbol: 'C-D LP',
-    lpAddresses: {
-      97: '',
-      56: '',
-      25925 : '0x6Bc840CDbf504360Aa2dDbD02Bd70Fa7C95C084B'
-    },
-    token: tokens.c,
-    quoteToken: tokens.d,
   },
   // {
   //   pid: 251,
@@ -3920,16 +3898,17 @@ const farms: FarmConfig[] = [
   //   token: tokens.hard,
   //   quoteToken: tokens.wbnb,
   // },
-  // {
-  //   pid: 2,
-  //   lpSymbol: 'BUSD-BNB LP',
-  //   lpAddresses: {
-  //     97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-  //     56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
-  //   },
-  //   token: tokens.busd,
-  //   quoteToken: tokens.wbnb,
-  // },
+  {
+    pid: 2,
+    lpSymbol: 'BUSD-BNB LP',
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
+      25925: '0x2f7682b64b88149ba3250aee32db712964de5fa9'
+    },
+    token: tokens.busd,
+    quoteToken: tokens.wbnb,
+  },
   // {
   //   pid: 3,
   //   lpSymbol: 'ADA-BNB LP',

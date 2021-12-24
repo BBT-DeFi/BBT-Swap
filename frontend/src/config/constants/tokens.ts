@@ -19,14 +19,14 @@ export const CAKE: { [chainId: number]: Token } = {
 export const BBDT: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET,
-    '0x383fFd1405D2e80B594A845EA834a78b4d1C092A',
+    '0xb720010f218A25BdBaf478C097A17fc6cf15F95F',
     18,
     'BBDT',
     'BBT DeFi Test',
   ),
   [ChainId.TESTNET]: new Token(
     ChainId.TESTNET,
-    '0x383fFd1405D2e80B594A845EA834a78b4d1C092A',
+    '0xb720010f218A25BdBaf478C097A17fc6cf15F95F',
     18,
     'BBDT',
     'BBT DeFi Test',
@@ -50,20 +50,20 @@ export const BUSD: { [chainId: number]: Token } = {
 }
 export const BBT: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', 18, 'BBT', 'BBT Token'),
-  [ChainId.TESTNET]: new Token(ChainId.TESTNET, '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe', 18, 'BBT', 'BBT Token'),
+  [ChainId.TESTNET]: new Token(ChainId.TESTNET, '0x51b3FdD642FC4bF6AcB2041F378BF6A55Ad7c99F', 18, 'BBT', 'BBT Token'),
 }
 
-export const WKUB = new Token(ChainId.MAINNET, '0xba3013a9F768a604C6752aB948c05BDAf023CaeF', 18, 'WKUB', 'Wrapped KUB')
-export const KDAI = new Token(
+export const WKUB = new Token(ChainId.MAINNET, '0xb3075F9462E0f345b7D68cACa30b97911831fd37', 18, 'WKUB', 'Wrapped KUB')
+export const KUSDT = new Token(
   ChainId.MAINNET,
-  '0xE6A31F08E1b4054139040153121bC42BD20B92Fd',
+  '0x1f86F79F109060725b6f4146bAeE9b7aca41267d',
   18,
-  'KDAI',
-  'Bitkub-Peg DAI',
+  'KUSDT',
+  'Bitkub-Peg USDT',
 )
 export const KETH = new Token(
   ChainId.MAINNET,
-  '0x929DCa4e0589383f08be49b4552666b4ABA99e60',
+  '0xeb35228d5BE26FD0c5CE28FF3FF08e2f1aD4e9A8',
   18,
   'KETH',
   'Bitkub-Peg ETH',
@@ -96,39 +96,39 @@ export const USDC = new Token(
 )
 
 const tokens = {
-  kub: {
-    symbol: 'D',
-    address: { '56': '', '97': '', '25925': '0xe55fe8516946aee1924ca7ad08056a5e6eb6f956' },
-    decimals: 18,
-    projectLink: '',
-  },
+  // kub: {
+  //   symbol: 'D',
+  //   address: { '56': '', '97': '', '25925': '0xe55fe8516946aee1924ca7ad08056a5e6eb6f956' },
+  //   decimals: 18,
+  //   projectLink: '',
+  // },
   bbdt: {
     symbol: 'BBDT',
-    address: { '56': '', '97': '', '25925': '0x383fFd1405D2e80B594A845EA834a78b4d1C092A' },
+    address: { '56': '', '97': '', '25925': '0xb720010f218A25BdBaf478C097A17fc6cf15F95F' },
     decimals: 18,
     projectLink: '',
   },
   a: {
     symbol: 'A',
-    address: { '56': '', '97': '', '25925': '0x7d7e6a44118e9baef79e74c25054101f32cdf983' },
+    address: { '56': '', '97': '', '25925': '0xe295f0314113Ea84E19b33641C38274295dB0A87' },
     decimals: 18,
     projectLink: '',
   },
   b: {
     symbol: 'B',
-    address: { '56': '', '97': '', '25925': '0x34e2c2a078b220df7f7ccf0d0aca5dbaa4a1c282' },
+    address: { '56': '', '97': '', '25925': '0xE78a58560B3F4A2f66c6067916b63ee14D9a060F' },
     decimals: 18,
     projectLink: '',
   },
   c: {
     symbol: 'C',
-    address: { '56': '', '97': '', '25925': '0x8d3f483e33faf642323d36a8faea6f2b2cd112d9' },
+    address: { '56': '', '97': '', '25925': '0x310F2D1d166746c2a5e65102a6D5E55a3026DfD0' },
     decimals: 18,
     projectLink: '',
   },
   d: {
     symbol: 'D',
-    address: { '56': '', '97': '', '25925': '0xe55fe8516946aee1924ca7ad08056a5e6eb6f956' },
+    address: { '56': '', '97': '', '25925': '0x3D927ED7663BD4cc520b18Aa1b19FE34ef288209' },
     decimals: 18,
     projectLink: '',
   },
@@ -878,7 +878,7 @@ const tokens = {
     address: {
       '56': '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
       '97': '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
-      '25925': '0xd10A30dd014557904F4BedB06798721Fdb7977F8',
+      '25925': '0x62AD849323125Ee87f762836E76cD5Ec6d599Edc',
     },
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
